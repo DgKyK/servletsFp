@@ -11,13 +11,12 @@
     <title>Login</title>
 </head>
 <body>
-    <form method="get" action="${pageContext.request.contextPath}/app/login
-">
+    <form method="get" action="${pageContext.request.contextPath}/fts/login">
         <input type="text" name="login"><br>
         <input type="password" name="password"><br>
         <input type="submit" value="Enter">
     </form>
 <h1>Login</h1>
-<h2><a href="${pageContext.request.contextPath}/app/logout">index.jsp</a> </h2>
+<h2><a href="${pageContext.request.contextPath}/fts/logout">index.jsp</a> </h2>
 </body>
 </html>

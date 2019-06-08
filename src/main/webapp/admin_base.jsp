@@ -13,8 +13,8 @@
 <body>
 <h1><b>Admin main page</b></h1>
 <br>
-<h3><a href="${pageContext.request.contextPath}/app/admin_statistic">Admin statistic</a></h3>
-<h3><a href="${pageContext.request.contextPath}/app/logout">LOG_OUT</a></h3>
+<h3><a href="${pageContext.request.contextPath}/fts/admin_statistic">Admin statistic</a></h3>
+<h3><a href="${pageContext.request.contextPath}/fts/logout">LOG_OUT</a></h3>
 
 </body>
 </html>

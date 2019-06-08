@@ -11,6 +11,6 @@
     <title>User statistic</title>
 </head>
 <body>
-<a href="${pageContext.request.contextPath}/app/user">go to user_base</a>
+<a href="${pageContext.request.contextPath}/fts/user">go to user_base</a>
 </body>
 </html>

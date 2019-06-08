@@ -16,6 +16,6 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>Servlet</servlet-name>
-    <url-pattern>/app/*</url-pattern>
+    <url-pattern>/fts/*</url-pattern>
   </servlet-mapping>
 </web-app>

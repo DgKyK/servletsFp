@@ -11,8 +11,8 @@
     <title>User Base</title>
 </head>
 <body>
-<h2><a href="${pageContext.request.contextPath}/app/user_statistic">Statistic</a></h2>
-<h3><a href="${pageContext.request.contextPath}/app/logout">LOG_OUT</a></h3>
+<h2><a href="${pageContext.request.contextPath}/fts/user_statistic">Statistic</a></h2>
+<h3><a href="${pageContext.request.contextPath}/fts/logout">LOG_OUT</a></h3>
 
 </body>
 </html>

@@ -12,6 +12,6 @@
 </head>
 <body>
     <h2>Admin stat</h2><br>
-    <h3><a href="${pageContext.request.contextPath}/app/admin">go to admin main page</a></h3>
+    <h3><a href="${pageContext.request.contextPath}/fts/admin">go to admin main page</a></h3>
 </body>
 </html>

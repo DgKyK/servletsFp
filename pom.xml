@@ -78,8 +78,8 @@
           <artifactId>tomcat7-maven-plugin</artifactId>
           <version>2.2</version>
           <configuration>
-            <port>8888</port>
-            <path>/coffee</path>
+            <port>8080</port>
+            <path>/api</path>
           </configuration>
         </plugin>
       </plugins>
