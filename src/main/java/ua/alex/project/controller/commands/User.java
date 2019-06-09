@@ -1,10 +1,10 @@
-package ua.alex.project.command;
+package ua.alex.project.controller.commands;
 
 import javax.servlet.http.HttpServletRequest;
 
-public class AdminStatistic implements Command {
+public class User implements Command {
     @Override
     public String execute(HttpServletRequest request) {
-        return "/admin_statistic.jsp";
+        return "/user/user_base.jsp";
     }
 }

@@ -1,7 +1,6 @@
-package ua.alex.project.controller;
+package ua.alex.project.controller.servlet;
 
-import ua.alex.project.command.*;
-
+import ua.alex.project.controller.commands.*;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -14,8 +13,8 @@ public class ServletController extends javax.servlet.http.HttpServlet {
     public void init() {
         commands.put("logout", new LogOut());
         commands.put("login", new LogIn());
-        commands.put("admin", new Admin());
-        commands.put("user", new User());
+        commands.put("admin_base", new Admin());
+        commands.put("user_base", new User());
         commands.put("admin_statistic", new AdminStatistic());
         commands.put("user_statistic" , new UserStatistic());
     }
@@ -33,7 +32,8 @@ public class ServletController extends javax.servlet.http.HttpServlet {
     private void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String path = request.getRequestURI();
         System.out.println(path);
-        path = path.replaceAll(".*/fts/" , "");
+        path = path.replaceAll(".*/" , "");
+        path = path.replaceAll(".*/" , "");
         System.out.println(path);
         Command command = commands.getOrDefault(path ,
                 (r)->"/index.jsp");

@@ -2,7 +2,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <body>
 <h2>Hello World!</h2>
-<br><h3><a href="${pageContext.request.contextPath}/fts/login">Login</a> </h3>
+<br><h3><a href="${pageContext.request.contextPath}/login">Login</a> </h3>
 
 </body>
 </html>

@@ -1,4 +1,4 @@
-package ua.alex.project.command;
+package ua.alex.project.controller.commands;
 
 import javax.servlet.http.HttpServletRequest;
 

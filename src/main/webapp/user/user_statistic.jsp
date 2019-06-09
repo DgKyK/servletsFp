@@ -8,11 +8,9 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>User Base</title>
+    <title>User statistic</title>
 </head>
 <body>
-<h2><a href="${pageContext.request.contextPath}/fts/user_statistic">Statistic</a></h2>
-<h3><a href="${pageContext.request.contextPath}/fts/logout">LOG_OUT</a></h3>
-
+<a href="${pageContext.request.contextPath}/user/user_base">go to user_base</a>
 </body>
 </html>

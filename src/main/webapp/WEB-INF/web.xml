@@ -12,10 +12,10 @@
 
   <servlet>
     <servlet-name>Servlet</servlet-name>
-    <servlet-class>ua.alex.project.controller.ServletController</servlet-class>
+    <servlet-class>ua.alex.project.controller.servlet.ServletController</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>Servlet</servlet-name>
-    <url-pattern>/fts/*</url-pattern>
+    <url-pattern>/</url-pattern>
   </servlet-mapping>
 </web-app>
