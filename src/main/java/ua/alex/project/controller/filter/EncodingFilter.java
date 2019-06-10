@@ -1,4 +1,4 @@
-package ua.alex.project.controller.servlet.filter;
+package ua.alex.project.controller.filter;
 
 import ua.alex.project.constants.Attributes;
 

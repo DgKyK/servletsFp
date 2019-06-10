@@ -48,7 +48,7 @@ public class JDBCUserDao implements UserDao {
     @Override
     public Optional<User> findByLogin(String login) {
         Optional<User> user = Optional.empty();
-        try(PreparedStatement ps = connection.prepareStatement(Attributes.DB_SQL_FIND_BY_LOGIN)) {
+        try(PreparedStatement ps = connection.prepareStatement("SELECT * FROM users WHERE users.login = ?")) {
             ps.setString(1,login);
             ResultSet rs = ps.executeQuery();
             UserMapper userMapper = new UserMapper();

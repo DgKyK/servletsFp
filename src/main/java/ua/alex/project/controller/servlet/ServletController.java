@@ -1,22 +1,19 @@
 package ua.alex.project.controller.servlet;
 
-import ua.alex.project.controller.commands.*;
+import ua.alex.project.controller.commands.Command;
+import ua.alex.project.controller.commands.util.CommandsUtil;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.HashMap;
+import java.util.Map;
 
 public class ServletController extends javax.servlet.http.HttpServlet {
-    private HashMap<String, Command> commands = new HashMap<>();
+    private Map<String, Command> commands;
 
     public void init() {
-        commands.put("logout", new LogOut());
-        commands.put("login", new LogIn());
-        commands.put("admin_base", new Admin());
-        commands.put("user_base", new User());
-        commands.put("admin_statistic", new AdminStatistic());
-        commands.put("user_statistic" , new UserStatistic());
+        commands = CommandsUtil.getCommandsMapInit();
     }
 
     protected void doPost(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response) throws javax.servlet.ServletException, IOException {

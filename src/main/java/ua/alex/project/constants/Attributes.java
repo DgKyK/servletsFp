@@ -25,9 +25,18 @@ public interface Attributes {
     String REQUEST_LOCALE_LANGUEDE = "localeLang";
 
     String PAGE_LOGIN_OR_REGISTER = "/login.jsp";
+    String PAGE_LOGOUT = "redirect:/login";
     String PAGE_DOUBLE_AUTH_ERROR = "redirect:/doubleAuthError";
-
-
     String PAGE_ADMIN_HOME = "/admin/admin_base";
     String PAGE_USER_HOME = "/user/user_base";
+    String PAGE_ADMIN_HOME_REDIRECT = "redirect:/admin/admin_base";
+    String PAGE_USER_HOME_REDIRECT = "redirect:/user/user_base";
+
+    String COMMAND_LOGIN_OR_REGISTER = "login";
+    String COMMAND_LOGOUT = "logout";
+    String COMMAND_ADMIN_HOME = "admin_base";
+    String COMMAND_USER_HOME = "user_base";
+    String COMMAND_ADMIN_STATISTIC = "admin_statistic";
+    String COMMAND_USER_STATISTIC = "user_statistic";
+
 }
