@@ -9,6 +9,8 @@ public interface Attributes {
     String DB_PASSWORD = "db.password";
     String DB_URL = "db.url";
 
+
+
     String DB_SQL_ALL_USERS = "sql.usersFindAll";
     String DB_SQL_SAVE = "sql.usersSave";
     String DB_SQL_FIND_BY_LOGIN = "sql.usersFindByLogin";

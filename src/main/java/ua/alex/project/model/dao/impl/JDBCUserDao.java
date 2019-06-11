@@ -9,20 +9,22 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.ResourceBundle;
 
 public class JDBCUserDao implements UserDao {
     private Connection connection;
-
+    private ResourceBundle bundle;
 
     public JDBCUserDao(Connection connection) {
         this.connection = connection;
+        bundle = ResourceBundle.getBundle(Attributes.DB_PROPERTIES_NAME);
     }
 
     @Override
     public List<User> findAll() {
         List<User> allUsers = new ArrayList<>();
         try(Statement statement = connection.createStatement()) {
-            ResultSet rs = statement.executeQuery(Attributes.DB_SQL_ALL_USERS);
+            ResultSet rs = statement.executeQuery(bundle.getString(Attributes.DB_SQL_ALL_USERS));
             UserMapper userMapper = new UserMapper();
             while(rs.next()) {
                 User user = userMapper.extractFromResultSet(rs);
@@ -32,7 +34,7 @@ public class JDBCUserDao implements UserDao {
             //TODO create logging for this case
             e.printStackTrace();
         }
-        return null;
+        return allUsers;
     }
 
     @Override
@@ -48,7 +50,7 @@ public class JDBCUserDao implements UserDao {
     @Override
     public Optional<User> findByLogin(String login) {
         Optional<User> user = Optional.empty();
-        try(PreparedStatement ps = connection.prepareStatement("SELECT * FROM users WHERE users.login = ?")) {
+        try(PreparedStatement ps = connection.prepareStatement(bundle.getString(Attributes.DB_SQL_FIND_BY_LOGIN))) {
             ps.setString(1,login);
             ResultSet rs = ps.executeQuery();
             UserMapper userMapper = new UserMapper();
@@ -62,13 +64,11 @@ public class JDBCUserDao implements UserDao {
             e.printStackTrace();
         }
         return user;
-
-
     }
 
     @Override
     public void save(User user) {
-        try (PreparedStatement ps = connection.prepareStatement(Attributes.DB_SQL_SAVE)) {
+        try (PreparedStatement ps = connection.prepareStatement(bundle.getString(Attributes.DB_SQL_SAVE))) {
             ps.setLong(1,user.getId());
             ps.setString(2, user.getLogin());
             ps.setString(3, user.getPassword());
@@ -83,7 +83,7 @@ public class JDBCUserDao implements UserDao {
 
     @Override
     public Optional<User> findById(long id) {
-        try(PreparedStatement ps = connection.prepareStatement(Attributes.DB_SQL_FIND_BY_ID)) {
+        try(PreparedStatement ps = connection.prepareStatement(bundle.getString(Attributes.DB_SQL_FIND_BY_ID))) {
             ps.setLong(1, id);
             ResultSet rs = ps.executeQuery();
             UserMapper userMapper = new UserMapper();
