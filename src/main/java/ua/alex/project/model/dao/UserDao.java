@@ -6,7 +6,8 @@ import java.util.List;
 import java.util.Optional;
 
 public interface UserDao extends GenericDao<User> {
-    List<User> findAll();
     Optional<User> findByLogin(String nickName);
     void save(User user);
+
+    void updateUser(User newUser);
 }

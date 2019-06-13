@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.Optional;
-@WebFilter(urlPatterns = {"/admin/admin_base", "/admin/admin_statistic"})
+@WebFilter(urlPatterns = {/*"/admin/admin_base", "/admin/admin_statistic",*/ "/admin/*"})
 public class AdminPermitFilter extends AbstractFilter {
     @Override
     protected void filter(HttpServletRequest request,
@@ -24,11 +24,8 @@ public class AdminPermitFilter extends AbstractFilter {
             } else if(user.get().getRole().equals(Role.USER)) {
                 //TODO logging this situation
                 response.sendRedirect(Attributes.PAGE_USER_HOME_REDIRECT);
-                //request.getRequestDispatcher(Attributes.PAGE_USER_HOME_REDIRECT).forward(request,response);
             }
-
         } else {
-            //response.sendRedirect(Attributes.PAGE_LOGIN_REDIRECT);
             request.getRequestDispatcher(Attributes.PAGE_LOGOUT).forward(request,response);
         }
 

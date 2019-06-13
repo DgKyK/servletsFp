@@ -13,24 +13,14 @@
         <div class="col">
             <div class="collapse multi-collapse" id="multiCollapseExample1">
                 <div class="list-group col-sm-5">
+                    <form method="post" action="${pageContext.request.contextPath}/admin/user_editor">
                     <c:forEach items="${allUsers}" var="usr">
-                        <a href="/admin/admin/${usr.getId()}" class="list-group-item list-group-item-action">${usr.getLogin()}</a>
+                        <input type="hidden" name="userId" value="${usr.getId()}" />
+                        <button type="submit" class="list-group-item list-group-item-action">${usr.getLogin()}</button>
                     </c:forEach>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
 </div>
-
-<%--<html>
-<head>
-    <title>AdminBase</title>
-</head>
-<body>
-<h1><b>Admin main page</b></h1>
-<br>
-<h3><a href="${pageContext.request.contextPath}/admin_statistic">Admin statistic</a></h3>
-<h3><a href="${pageContext.request.contextPath}/logout">LOG_OUT</a></h3>
-
-</body>
-</html>--%>

@@ -11,4 +11,6 @@ public interface UserService {
     Optional<User> getUserByLogin(String login);
 
     void addUser(User user);
+
+    void updateUserInfo(User newUser);
 }

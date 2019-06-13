@@ -49,4 +49,11 @@ public class UserServiceImpl implements UserService {
             userDao.save(user);
         }
     }
+
+    @Override
+    public void updateUserInfo(User newUser) {
+        try(UserDao userDao = daoFactory.createUserDao()) {
+            userDao.updateUser(newUser);
+        }
+    }
 }

@@ -21,6 +21,7 @@ public interface Attributes {
     String DB_SQL_FIND_ALL_QUESTIONS_BY_TEST_ID = "sql.questionsFindAllQuestionsByTestId";
     String DB_SQL_FIND_ALL_SUCCESS_BY_USER_ID = "sql.studentSuccessFindAllByUserId";
     String DB_SQL_FIND_TEST_BY_NAME = "sql.testsFindTestByName";
+    String DB_SQL_UPDATE_USER = "sql.usersUpdateUser";
 
 
     String REQUEST_LOGIN = "login";
@@ -34,6 +35,13 @@ public interface Attributes {
     String REQUEST_NO_TESTS = "noTest";
     String REQUEST_CHOSEN_TEST = "chosenTest";
     String REQUEST_SUCCESS = "success";
+    String REQUEST_USER_ID = "userId";
+    String REQUEST_EDIT_USER = "editUser";
+    String REQUEST_ALL_ROLES = "roles";
+    String REQUEST_NEW_USER_LOGIN = "newLogin";
+    String REQUEST_NEW_USER_EMAIL = "newEmail";
+    String REQUEST_NEW_USER_ROLE = "newRole";
+    String REQUEST_GENERAL_STATISTIC = "generalStatistic";
 
     String PAGE_LOGIN = "/login.jsp";
     String PAGE_LOGIN_REDIRECT = "redirect:/login";
@@ -48,6 +56,7 @@ public interface Attributes {
     String PAGE_GENERAL = "/index.jsp";
     String PAGE_REGISTRATION = "/registration.jsp";
     String PAGE_TEST = "/user/test.jsp";
+    String PAGE_USER_EDITOR = "/admin/user_editor.jsp";
 
     String COMMAND_LOGIN_OR_REGISTER = "login";
     String COMMAND_LOGOUT = "logout";
@@ -57,6 +66,7 @@ public interface Attributes {
     String COMMAND_USER_STATISTIC = "user_statistic";
     String COMMAND_REGISTRATION = "registration";
     String COMMAND_TEST = "test";
+    String COMMAND_USER_EDITOR = "user_editor";
 
     String REGEX_LOGIN = "[^_\\\\.&,#@!\\\\?\\\\(\\\\)\\\\-\\\\=\\\\+\\\\\\\\`\\\\~\\\\s][A-za-z]{1,5}[A-Za-z0-9_]{0,15}";
     String REGEX_PASSWORD = ".{4,15}";

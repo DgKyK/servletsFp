@@ -48,7 +48,7 @@
             </c:if>
             <c:if test="${user.isAdmin()}">
                 <li class="nav-item active">
-                    <a class="nav-link" href="/admin/statistic">Users statistic<span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="${pageContext.request.contextPath}/admin/admin_statistic">Users statistic<span class="sr-only">(current)</span></a>
                 </li>
             </c:if>
         </ul>

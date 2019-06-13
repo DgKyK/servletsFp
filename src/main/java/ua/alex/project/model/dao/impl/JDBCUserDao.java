@@ -57,6 +57,21 @@ public class JDBCUserDao implements UserDao {
     }
 
     @Override
+    public void updateUser(User newUser) {
+
+        try(PreparedStatement ps = connection.prepareStatement(bundle.getString(Attributes.DB_SQL_UPDATE_USER))) {
+            ps.setString(1,newUser.getLogin());
+            ps.setString(2,newUser.getEmail());
+            ps.setString(3,newUser.getRole().toString());
+            ps.setLong(4,newUser.getId());
+            ps.executeUpdate();
+        } catch (SQLException e) {
+            //TODO log.warn("exception when udating user : " + e.printStackTrace());
+            e.printStackTrace();
+        }
+    }
+
+    @Override
     public void save(User user) {
         try (PreparedStatement ps = connection.prepareStatement(bundle.getString(Attributes.DB_SQL_SAVE_USER))) {
             ps.setString(1, user.getLogin());
