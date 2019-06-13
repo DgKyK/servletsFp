@@ -27,10 +27,10 @@ public class JDBCStudentSuccessDao implements StudentSuccessDao {
 
 
     @Override
-    public List<StudentSuccess> findAllByUserLogin(String userLogin) {
+    public List<StudentSuccess> findAllByUserId(long id) {
         List<StudentSuccess> successList = new ArrayList<>();
-        try(PreparedStatement ps = connection.prepareStatement(bundle.getString(Attributes.DB_SQL_FIND_ALL_SUCCESS_BY_USER_LOGIN))) {
-            ps.setString(1, userLogin);
+        try(PreparedStatement ps = connection.prepareStatement(bundle.getString(Attributes.DB_SQL_FIND_ALL_SUCCESS_BY_USER_ID))) {
+            ps.setLong(1, id);
             ResultSet rs = ps.executeQuery();
             StudentSuccessMapper mapper = new StudentSuccessMapper();
             while(rs.next()) {

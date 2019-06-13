@@ -5,5 +5,5 @@ import ua.alex.project.model.entity.StudentSuccess;
 import java.util.List;
 
 public interface StudentSuccessDao extends GenericDao<StudentSuccess> {
-    List<StudentSuccess> findAllByUserLogin(String userLogin);
+    List<StudentSuccess> findAllByUserId(long id);
 }

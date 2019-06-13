@@ -2,7 +2,11 @@
 
 
 <jsp:include page="parts/common.jsp"/>
+<div class="container mt-5 mb-5" >
+    <div class="mt-10">
+        <h2 class="text-center">Welcome to Fast Testing System</h2>
 
-<h2>Hello World!</h2>
-<br><h3><a href="${pageContext.request.contextPath}/login">Login</a> or <a href="${pageContext.request.contextPath}/registration">Register</a>  </h3>
-
+        <h3 class="text-center">to continue please</h3>
+        <h3 class="text-center"><a href="${pageContext.request.contextPath}/login">Login</a> or <a href="${pageContext.request.contextPath}/registration">Register</a></h3>
+    </div>
+</div>

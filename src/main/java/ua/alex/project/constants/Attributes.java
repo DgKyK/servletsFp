@@ -19,7 +19,7 @@ public interface Attributes {
     String DB_SQL_ALL_TESTS = "sql.testsFindAll";
     String DB_SQL_FIND_TEST_BY_ID = "sql.testsFindById";
     String DB_SQL_FIND_ALL_QUESTIONS_BY_TEST_ID = "sql.questionsFindAllQuestionsByTestId";
-    String DB_SQL_FIND_ALL_SUCCESS_BY_USER_LOGIN = "sql.studentSuccessFindAllByUserLogin";
+    String DB_SQL_FIND_ALL_SUCCESS_BY_USER_ID = "sql.studentSuccessFindAllByUserId";
     String DB_SQL_FIND_TEST_BY_NAME = "sql.testsFindTestByName";
 
 
@@ -33,6 +33,7 @@ public interface Attributes {
     String REQUEST_LOCALE_LANGUEDE = "localeLang";
     String REQUEST_NO_TESTS = "noTest";
     String REQUEST_CHOSEN_TEST = "chosenTest";
+    String REQUEST_SUCCESS = "success";
 
     String PAGE_LOGIN = "/login.jsp";
     String PAGE_LOGIN_REDIRECT = "redirect:/login";

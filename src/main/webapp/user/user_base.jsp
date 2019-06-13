@@ -24,6 +24,4 @@
         <input type="hidden" name="_csrf" value="${_csrf.token}" />
         <button type="submit" class="btn btn-primary mt-2">Pass Test</button>
     </form>
-
-    <h3><a href="${pageContext.request.contextPath}/logout">LOG_OUT | "${pageContext.request.contextPath}"</a></h3>
 </div>

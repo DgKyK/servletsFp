@@ -3,6 +3,7 @@ package ua.alex.project.model.dao.mapper;
 import ua.alex.project.model.entity.StudentSuccess;
 import ua.alex.project.model.entity.Test;
 import ua.alex.project.model.entity.User;
+import ua.alex.project.model.enums.TestStatus;
 import ua.alex.project.model.service.TestService;
 import ua.alex.project.model.service.UserService;
 import ua.alex.project.model.service.impl.TestServiceImpl;
@@ -21,10 +22,11 @@ public class StudentSuccessMapper implements ObjectMapper<StudentSuccess> {
         StudentSuccess studentSuccess = new StudentSuccess.Builder()
                 .setId(rs.getLong("id"))
                 .setTest(test)
-                .setQuestNumber(rs.getInt("questNumber"))
+                .setQuestNumber(rs.getInt("quest_number"))
                 .setWriteAnswer(rs.getInt("write_answer"))
                 .setWrongAnswer(rs.getInt("wrong_answer"))
                 .setUserId(user.getId())
+                .setStatus(TestStatus.valueOf(rs.getString("status")))
                 .build();
 
         return studentSuccess;

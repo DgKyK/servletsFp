@@ -7,5 +7,5 @@ import java.util.Map;
 
 public interface StudentSuccessService {
     void saveCurrentResult(Map<String,Boolean> resultTest, String testInfo, String userName);
-    List<StudentSuccess> findAllByUserName(String userName);
+    List<StudentSuccess> findAllByUserLogin(String userName);
 }

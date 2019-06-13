@@ -1,16 +1,32 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Windows
-  Date: 26.05.2019
-  Time: 17:41
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
-<head>
-    <title>User statistic</title>
-</head>
-<body>
-<a href="${pageContext.request.contextPath}/user/user_base">go to user_base</a>
-</body>
-</html>
+<%@include file="../parts/imports.jsp"%>
+<jsp:include page="/parts/common.jsp"/>
+<div class="container mt-5 mb-5" >
+    <div>
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">Test name</th>
+                <th scope="col">Theme</th>
+                <th scope="col">Questions</th>
+                <th scope="col">Write</th>
+                <th scope="col">Wrong</th>
+                <th scope="col">Status</th>
+            </tr>
+            </thead>
+            <tbody>
+            <c:forEach items="${success}" var="ss">
+            <tr>
+                <th scope="row">${ss.getTest().getName()}</th>
+                <td>${ss.getTest().getTheme()}</td>
+                <td>${ss.getQuestNumber()}</td>
+                <td>${ss.getWriteAnswer()}</td>
+                <td>${ss.getWrongAnswer()}</td>
+                <td>${ss.getStatus()}</td>
+            </tr>
+            </c:forEach>
+            </tbody>
+        </table>
+    </div>
+
+
+</div>

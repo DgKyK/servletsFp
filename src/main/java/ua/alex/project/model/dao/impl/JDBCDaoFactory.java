@@ -1,15 +1,14 @@
 package ua.alex.project.model.dao.impl;
 
 import ua.alex.project.model.dao.*;
-import ua.alex.project.constants.Attributes;
 
+import javax.sql.DataSource;
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.SQLException;
-import java.util.ResourceBundle;
 
 
 public class JDBCDaoFactory extends DaoFactory {
+    private DataSource dataSource = ConnectionPoolHolder.getDataSource();
 
     @Override
     public UserDao createUserDao() {
@@ -33,15 +32,11 @@ public class JDBCDaoFactory extends DaoFactory {
     }
 
     private Connection getConnection() {
-        ResourceBundle bundle = ResourceBundle.getBundle(Attributes.DB_PROPERTIES_NAME);
-        Connection connection = null;
         try {
-            connection = DriverManager.getConnection(bundle.getString(Attributes.DB_URL),
-                    bundle.getString(Attributes.DB_USERNAME),
-                    bundle.getString(Attributes.DB_PASSWORD));
+            return dataSource.getConnection();
         } catch (SQLException e) {
-            e.printStackTrace();
+            //TODO log.warn("Cant get connection from Pool : " + e.printStackTrace);
+            throw new RuntimeException(e);
         }
-        return connection;
     }
 }

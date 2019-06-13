@@ -14,6 +14,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 public class StudentSuccessServiceImpl implements StudentSuccessService {
 
@@ -56,10 +57,12 @@ public class StudentSuccessServiceImpl implements StudentSuccessService {
     }
 
     @Override
-    public List<StudentSuccess> findAllByUserName(String userLogin) {
+    public List<StudentSuccess> findAllByUserLogin(String userLogin) {
+        Optional<User> userByLogin = userService.getUserByLogin(userLogin);
+
         List<StudentSuccess> successList = new ArrayList<>();
         try(StudentSuccessDao studentSuccessDao = daoFactory.createStudentSuccessDao()) {
-            successList = studentSuccessDao.findAllByUserLogin(userLogin);
+            successList = studentSuccessDao.findAllByUserId(userByLogin.get().getId());
         }
         return successList;
     }
