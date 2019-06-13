@@ -60,9 +60,49 @@ public class Test {
         this.needAnswerNumber = needAnswerNumber;
     }
 
+    public static class Builder {
+        private Test test;
+
+        public Builder() {
+            test = new Test();
+        }
+
+        public Builder setId(long id){
+            test.id = id;
+            return this;
+        }
+
+        public Builder setName(String name){
+            test.name = name;
+            return this;
+        }
+
+        public Builder setTheme(String theme){
+            test.theme = theme;
+            return this;
+        }
+
+        public Builder setQuestNumber(int questNumber){
+            test.questNumber = questNumber;
+            return this;
+        }
+
+        public Builder setNeedAnswerNumber(int needAnswerNumber){
+            test.needAnswerNumber = needAnswerNumber;
+            return this;
+        }
+
+        public Test build(){
+            return test;
+        }
+
+    }
+
+
+
     @Override
     public String toString() {
-        return "Test{" +
+        return "PassedTest{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", theme='" + theme + '\'' +

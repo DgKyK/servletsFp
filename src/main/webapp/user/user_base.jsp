@@ -1,18 +1,29 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Windows
-  Date: 26.05.2019
-  Time: 17:41
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
-<head>
-    <title>User Base</title>
-</head>
-<body>
-<h2><a href="${pageContext.request.contextPath}/user/user_statistic">Statistic</a></h2>
-<h3><a href="${pageContext.request.contextPath}/logout">LOG_OUT | "${pageContext.request.contextPath}"</a></h3>
+<%@include file="../parts/imports.jsp"%>
+<jsp:include page="/parts/common.jsp"/>
+<div class="container mt-5 mb-5" >
+    <div>
+        <h2> Hello ${user.getLogin()}</h2>
+    </div>
 
-</body>
-</html>
+    <form action="${pageContext.request.contextPath}/user/test" method="post" name="test">
+        <div>
+            <select class="custom-select col-sm-5 mt-2" name="chosenTest">
+                <c:forEach items="${allTests}" var="test">
+                    <option>
+                        <div>
+                            <b>${test.getId()}</b>
+                            <strong>|</strong>
+                            <span>${test.getName()}</span>
+                            <strong>|</strong>
+                            <i>${test.getTheme()}</i>
+                        </div>
+                    </option>
+                </c:forEach>
+            </select>
+        </div>
+        <input type="hidden" name="_csrf" value="${_csrf.token}" />
+        <button type="submit" class="btn btn-primary mt-2">Pass Test</button>
+    </form>
+
+    <h3><a href="${pageContext.request.contextPath}/logout">LOG_OUT | "${pageContext.request.contextPath}"</a></h3>
+</div>

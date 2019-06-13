@@ -1,9 +1,6 @@
 package ua.alex.project.model.dao.impl;
 
-import ua.alex.project.model.dao.DaoFactory;
-import ua.alex.project.model.dao.StudentSuccessDao;
-import ua.alex.project.model.dao.TestDao;
-import ua.alex.project.model.dao.UserDao;
+import ua.alex.project.model.dao.*;
 import ua.alex.project.constants.Attributes;
 
 import java.sql.Connection;
@@ -21,12 +18,18 @@ public class JDBCDaoFactory extends DaoFactory {
 
     @Override
     public TestDao createTestDao() {
-        return null;
+        return new JDBCTestDao(getConnection());
     }
+
 
     @Override
     public StudentSuccessDao createStudentSuccessDao() {
-        return null;
+        return new JDBCStudentSuccessDao(getConnection());
+    }
+
+    @Override
+    public QuestionDao createQuestionDao() {
+        return new JDBCQuestionDao(getConnection());
     }
 
     private Connection getConnection() {

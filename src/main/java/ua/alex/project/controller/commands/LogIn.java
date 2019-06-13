@@ -12,7 +12,7 @@ public class LogIn implements Command {
     public String execute(HttpServletRequest request) {
         String login = request.getParameter(Attributes.REQUEST_LOGIN);
         String password = request.getParameter(Attributes.REQUEST_PASSWORD);
-        String returnPage = Attributes.PAGE_LOGIN_OR_REGISTER;
+        String returnPage = Attributes.PAGE_LOGIN;
 
         Optional<User> userFromBd = USER_SERVICE.getUserByLogin(login);
 

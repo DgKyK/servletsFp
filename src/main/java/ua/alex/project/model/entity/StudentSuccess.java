@@ -3,23 +3,24 @@ package ua.alex.project.model.entity;
 import ua.alex.project.model.enums.TestStatus;
 
 public class StudentSuccess {
+
     private long id;
-    private String testName;
-    private String testTheme;
+    private long userId;
     private int questNumber;
     private int writeAnswer;
     private int wrongAnswer;
+    private Test test;
     private TestStatus status;
 
     public StudentSuccess() {
 
     }
 
-    public StudentSuccess(long id, String testName, String testTheme, int questNumber, int writeAnswer,
+    public StudentSuccess(long id, long userId, Test test, int questNumber, int writeAnswer,
                           int wrongAnswer, TestStatus status) {
         this.id = id;
-        this.testName = testName;
-        this.testTheme = testTheme;
+        this.userId = userId;
+        this.test = test;
         this.questNumber = questNumber;
         this.writeAnswer = writeAnswer;
         this.wrongAnswer = wrongAnswer;
@@ -34,20 +35,20 @@ public class StudentSuccess {
         this.id = id;
     }
 
-    public String getTestName() {
-        return testName;
+    public long getUserId() {
+        return userId;
     }
 
-    public void setTestName(String testName) {
-        this.testName = testName;
+    public void setUserId(long userId) {
+        this.userId = userId;
     }
 
-    public String getTestTheme() {
-        return testTheme;
+    public Test getTest() {
+        return test;
     }
 
-    public void setTestTheme(String testTheme) {
-        this.testTheme = testTheme;
+    public void setTest(Test test) {
+        this.test = test;
     }
 
     public int getQuestNumber() {
@@ -80,5 +81,53 @@ public class StudentSuccess {
 
     public void setStatus(TestStatus status) {
         this.status = status;
+    }
+
+    public static class Builder {
+
+        private StudentSuccess success;
+
+        public Builder() {
+            success = new StudentSuccess();
+        }
+
+        public Builder setId(long id){
+            success.id = id;
+            return this;
+        }
+
+        public Builder setUserId(long userIdid){
+            success.userId = userIdid;
+            return this;
+        }
+
+        public Builder setTest(Test test){
+            success.test = test;
+            return this;
+        }
+
+        public Builder setQuestNumber(int questNumber){
+            success.questNumber = questNumber;
+            return this;
+        }
+
+        public Builder setWriteAnswer(int writeAnswers){
+            success.writeAnswer = writeAnswers;
+            return this;
+        }
+
+        public Builder setWrongAnswer(int wrongAnswers){
+            success.wrongAnswer = wrongAnswers;
+            return this;
+        }
+
+        public Builder setStatus(TestStatus status){
+            success.status= status;
+            return this;
+        }
+
+        public StudentSuccess build(){
+            return success;
+        }
     }
 }

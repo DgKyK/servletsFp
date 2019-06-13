@@ -21,6 +21,8 @@ public class CommandsUtil {
         commands.put(Attributes.COMMAND_USER_HOME, new ua.alex.project.controller.commands.User());
         commands.put(Attributes.COMMAND_ADMIN_STATISTIC, new AdminStatistic());
         commands.put(Attributes.COMMAND_USER_STATISTIC, new UserStatistic());
+        commands.put(Attributes.COMMAND_REGISTRATION, new Registration());
+        commands.put(Attributes.COMMAND_TEST, new PassedTest());
 
         return commands;
     }
@@ -45,7 +47,7 @@ public class CommandsUtil {
         } else if( user.getRole().equals(Role.USER)) {
             return Attributes.PAGE_USER_HOME_REDIRECT;
         } else {
-            return Attributes.PAGE_LOGIN_OR_REGISTER;
+            return Attributes.PAGE_LOGIN;
         }
     }
 

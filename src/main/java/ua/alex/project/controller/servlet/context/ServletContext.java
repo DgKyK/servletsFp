@@ -19,10 +19,10 @@ public class ServletContext implements ServletContextListener {
     @Override
     public void contextInitialized(ServletContextEvent servletContextEvent) {
         servletContextEvent.getServletContext().setAttribute(Attributes.REQUEST_All_USERS, allUsers);
-        //List<Test> allTests = testService.findAll();
+        //List<PassedTest> allTests = testService.findAllTests();
 
         /*if(!allTests.isEmpty()) {
-            allTests.sort(Comparator.comparingLong(Test::getId));
+            allTests.sort(Comparator.comparingLong(PassedTest::getId));
             servletContextEvent.getServletContext().setAttribute(Attributes.REQUEST_ALL_TESTS, allTests);
         }*/
     }

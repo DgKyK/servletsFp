@@ -38,19 +38,9 @@ public class JDBCUserDao implements UserDao {
     }
 
     @Override
-    public void close()  {
-        try {
-            connection.close();
-        } catch (SQLException e) {
-            //TODO logging for this case
-            throw new RuntimeException(e);
-        }
-    }
-
-    @Override
     public Optional<User> findByLogin(String login) {
         Optional<User> user = Optional.empty();
-        try(PreparedStatement ps = connection.prepareStatement(bundle.getString(Attributes.DB_SQL_FIND_BY_LOGIN))) {
+        try(PreparedStatement ps = connection.prepareStatement(bundle.getString(Attributes.DB_SQL_FIND_USER_BY_LOGIN))) {
             ps.setString(1,login);
             ResultSet rs = ps.executeQuery();
             UserMapper userMapper = new UserMapper();
@@ -68,13 +58,12 @@ public class JDBCUserDao implements UserDao {
 
     @Override
     public void save(User user) {
-        try (PreparedStatement ps = connection.prepareStatement(bundle.getString(Attributes.DB_SQL_SAVE))) {
-            ps.setLong(1,user.getId());
-            ps.setString(2, user.getLogin());
-            ps.setString(3, user.getPassword());
-            ps.setString(4,user.getEmail());
-            ps.setString(5, user.getRole().toString());
-            ps.execute();
+        try (PreparedStatement ps = connection.prepareStatement(bundle.getString(Attributes.DB_SQL_SAVE_USER))) {
+            ps.setString(1, user.getLogin());
+            ps.setString(2, user.getPassword());
+            ps.setString(3,user.getEmail());
+            ps.setString(4, user.getRole().toString());
+            ps.executeUpdate();
         } catch (SQLException e) {
             //TODO logging for this case
             e.printStackTrace();
@@ -83,7 +72,7 @@ public class JDBCUserDao implements UserDao {
 
     @Override
     public Optional<User> findById(long id) {
-        try(PreparedStatement ps = connection.prepareStatement(bundle.getString(Attributes.DB_SQL_FIND_BY_ID))) {
+        try(PreparedStatement ps = connection.prepareStatement(bundle.getString(Attributes.DB_SQL_FIND_USER_BY_ID))) {
             ps.setLong(1, id);
             ResultSet rs = ps.executeQuery();
             UserMapper userMapper = new UserMapper();
@@ -95,5 +84,15 @@ public class JDBCUserDao implements UserDao {
             e.printStackTrace();
         }
         return Optional.empty();
+    }
+
+    @Override
+    public void close()  {
+        try {
+            connection.close();
+        } catch (SQLException e) {
+            //TODO logging for this case
+            throw new RuntimeException(e);
+        }
     }
 }

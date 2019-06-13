@@ -13,14 +13,15 @@ public class UserServiceImpl implements UserService {
     private DaoFactory daoFactory = DaoFactory.getInstance();
 
     @Override
-    public User getUserById(long id) {
+    public Optional<User> getUserById(long id) {
         try(UserDao userDao = daoFactory.createUserDao()) {
             Optional<User> userFromDb = userDao.findById(id);
             if(userFromDb.isPresent()) {
-                return userFromDb.get();
+                return userFromDb;
             }
         }
-        throw new RuntimeException("User with id : " + id + " not found");
+        /*TODO log.warn("User with id : " + id + " not found");*/
+        return Optional.empty();
     }
 
     @Override
@@ -40,5 +41,12 @@ public class UserServiceImpl implements UserService {
             }
         }
         return Optional.empty();
+    }
+
+    @Override
+    public void addUser(User user) {
+        try(UserDao userDao = daoFactory.createUserDao()) {
+            userDao.save(user);
+        }
     }
 }
