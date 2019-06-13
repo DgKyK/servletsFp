@@ -11,7 +11,9 @@ public class LogOut implements Command {
     public String execute(HttpServletRequest request) {
         User currentUser = (User) request.getSession().getAttribute(Attributes.REQUEST_USER);
         CommandsUtil.removeUserFromContext(request, currentUser.getLogin());
+
         request.getSession().setAttribute(Attributes.REQUEST_USER, null);
+
         return Attributes.PAGE_LOGOUT;
     }
 }

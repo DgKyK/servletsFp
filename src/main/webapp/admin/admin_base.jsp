@@ -15,8 +15,9 @@
                 <div class="list-group col-sm-5">
                     <form method="post" action="${pageContext.request.contextPath}/admin/user_editor">
                     <c:forEach items="${allUsers}" var="usr">
-                        <input type="hidden" name="userId" value="${usr.getId()}" />
-                        <button type="submit" class="list-group-item list-group-item-action">${usr.getLogin()}</button>
+                        <button type="submit"
+                                class="list-group-item list-group-item-action"
+                                value="${usr.getId()}" name="userId">${usr.getLogin()}</button>
                     </c:forEach>
                     </form>
                 </div>

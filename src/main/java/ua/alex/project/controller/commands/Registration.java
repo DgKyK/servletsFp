@@ -12,6 +12,7 @@ public class Registration implements Command {
         String login = request.getParameter(Attributes.REQUEST_LOGIN);
         String password = request.getParameter(Attributes.REQUEST_PASSWORD);
         String email = request.getParameter(Attributes.REQUEST_EMAIL);
+
         String returnPage = Attributes.PAGE_REGISTRATION;
 
         boolean loginError = false;
@@ -28,6 +29,7 @@ public class Registration implements Command {
             //TODO log.info( "registration error" )
             return returnPage;
         }
+
         User user = User.newBuilder()
                 .setLogin(login)
                 .setPassword(password)
