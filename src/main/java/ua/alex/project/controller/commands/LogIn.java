@@ -13,11 +13,15 @@ public class LogIn implements Command {
         String login = request.getParameter(Attributes.REQUEST_LOGIN);
         String password = request.getParameter(Attributes.REQUEST_PASSWORD);
         String returnPage = Attributes.PAGE_LOGIN;
+        boolean loginError;
 
         Optional<User> userFromBd = USER_SERVICE.getUserByLogin(login);
 
         if(userFromBd.isPresent() && userFromBd.get().getPassword().equals(password)) {
             returnPage = CommandsUtil.openUserSession(request,userFromBd.get());
+        } else {
+            loginError = true;
+            request.getSession().setAttribute(Attributes.REQUEST_LOGIN_ERROR, loginError);
         }
 
         return returnPage;

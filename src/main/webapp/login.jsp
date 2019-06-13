@@ -1,10 +1,26 @@
+
+<%@include file="./parts/imports.jsp"%>
+<jsp:include page="/parts/common.jsp"/>
+<div class="container mt-5 mb-5" >
+
+    <h3>Login page</h3>
+    <c:if test="${loginError}">
+        <div class="alert alert-danger col-sm-3" role="alert">
+                ${rc.getMessage("message.invalidpassword")}
+        </div>
+    </c:if>
+    <c:if test="${logoutError}">
+        <div class="alert alert-success col-sm-3" role="alert">
+                ${rc.getMessage("message.beenlogedout")}
+        </div>
+    </c:if>
+</div>
+
+
+
+
+
 <%--
-  Created by IntelliJ IDEA.
-  User: Windows
-  Date: 26.05.2019
-  Time: 16:43
-  To change this template use File | Settings | File Templates.
---%>
 <%@include file="./parts/imports.jsp"%>
 <jsp:include page="/parts/common.jsp"/>
 <div class="container mt-5 mb-5" >
@@ -15,4 +31,4 @@
         <input type="submit" value="Enter">
     </form>
 
-</div>
+</div>--%>

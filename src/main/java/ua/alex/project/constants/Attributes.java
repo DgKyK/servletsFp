@@ -42,6 +42,7 @@ public interface Attributes {
     String REQUEST_NEW_USER_EMAIL = "newEmail";
     String REQUEST_NEW_USER_ROLE = "newRole";
     String REQUEST_GENERAL_STATISTIC = "generalStatistic";
+    String REQUEST_LOGIN_ERROR = "loginError";
 
     String PAGE_LOGIN = "/login.jsp";
     String PAGE_LOGIN_REDIRECT = "redirect:/login";
