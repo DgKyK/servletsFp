@@ -7,6 +7,6 @@
         <h2 class="text-center">Welcome to Fast Testing System</h2>
 
         <h3 class="text-center">to continue please</h3>
-        <h3 class="text-center"><a href="${pageContext.request.contextPath}/login">Login</a> or <a href="${pageContext.request.contextPath}/registration">Register</a></h3>
+        <h3 class="text-center"><a href="${pageContext.request.contextPath}/loginFirst">Login</a> or <a href="${pageContext.request.contextPath}/registration">Register</a></h3>
     </div>
 </div>

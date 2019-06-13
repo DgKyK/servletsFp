@@ -2,6 +2,7 @@ package ua.alex.project.controller.commands.util;
 
 import ua.alex.project.constants.Attributes;
 import ua.alex.project.controller.commands.*;
+import ua.alex.project.controller.commands.directions.LoginFirst;
 import ua.alex.project.model.entity.User;
 import ua.alex.project.model.enums.Role;
 
@@ -24,6 +25,7 @@ public class CommandsUtil {
         commands.put(Attributes.COMMAND_REGISTRATION, new Registration());
         commands.put(Attributes.COMMAND_TEST, new PassedTest());
         commands.put(Attributes.COMMAND_USER_EDITOR, new EditUser());
+        commands.put(Attributes.COMMAND_LOGIN_FIRST, new LoginFirst());
 
         return commands;
     }

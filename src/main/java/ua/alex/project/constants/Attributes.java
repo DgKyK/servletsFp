@@ -45,8 +45,9 @@ public interface Attributes {
     String REQUEST_LOGIN_ERROR = "loginError";
 
     String PAGE_LOGIN = "/login.jsp";
+    String PAGE_LOGIN_FIRST = "/login.jsp";
     String PAGE_LOGIN_REDIRECT = "redirect:/login";
-    String PAGE_LOGOUT = "redirect:/login";
+    String PAGE_LOGOUT = "redirect:/loginFirst";
     String PAGE_DOUBLE_AUTH_ERROR = "redirect:/doubleAuthError";
     String PAGE_ADMIN_HOME = "/admin/admin_base.jsp";
     String PAGE_USER_HOME = "/user/user_base.jsp";
@@ -68,6 +69,7 @@ public interface Attributes {
     String COMMAND_REGISTRATION = "registration";
     String COMMAND_TEST = "test";
     String COMMAND_USER_EDITOR = "user_editor";
+    String COMMAND_LOGIN_FIRST = "loginFirst";
 
     String REGEX_LOGIN = "[^_\\\\.&,#@!\\\\?\\\\(\\\\)\\\\-\\\\=\\\\+\\\\\\\\`\\\\~\\\\s][A-za-z]{1,5}[A-Za-z0-9_]{0,15}";
     String REGEX_PASSWORD = ".{4,15}";
