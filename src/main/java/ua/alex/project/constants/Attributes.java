@@ -43,10 +43,15 @@ public interface Attributes {
     String REQUEST_NEW_USER_ROLE = "newRole";
     String REQUEST_GENERAL_STATISTIC = "generalStatistic";
     String REQUEST_LOGIN_ERROR = "loginError";
+    String REQUEST_LOGIN_REGISTER_ERROR = "loginRegisterError";
+    String REQUEST_PASSWORD_REGISTER_ERROR = "passwordRegisterError";
+    String REQUEST_EMAIL_REGISTER_ERROR = "emailRegisterError";
+    String REQUEST_USER_EXIST_ERROR = "userExistError";
+    String REQUEST_SESSION_LOCALE = "sessionLocale";
 
     String PAGE_LOGIN = "/login.jsp";
     String PAGE_LOGIN_FIRST = "/login.jsp";
-    String PAGE_LOGIN_REDIRECT = "redirect:/login";
+    String PAGE_LOGIN_REDIRECT = "redirect:/login.jsp";
     String PAGE_LOGOUT = "redirect:/loginFirst";
     String PAGE_DOUBLE_AUTH_ERROR = "redirect:/doubleAuthError";
     String PAGE_ADMIN_HOME = "/admin/admin_base.jsp";
@@ -60,7 +65,8 @@ public interface Attributes {
     String PAGE_TEST = "/user/test.jsp";
     String PAGE_USER_EDITOR = "/admin/user_editor.jsp";
 
-    String COMMAND_LOGIN_OR_REGISTER = "login";
+    String COMMAND_LOGIN = "login";
+    String COMMAND_REGISTRATION_FIRST = "registrationFirst";
     String COMMAND_LOGOUT = "logout";
     String COMMAND_ADMIN_HOME = "admin_base";
     String COMMAND_USER_HOME = "user_base";

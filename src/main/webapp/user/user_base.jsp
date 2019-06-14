@@ -2,7 +2,10 @@
 <jsp:include page="/parts/common.jsp"/>
 <div class="container mt-5 mb-5" >
     <div>
-        <h2> Hello ${user.getLogin()}</h2>
+        <h2> <fmt:message key="message.hello"/> ${user.getLogin()}</h2>
+    </div>
+    <div >
+        <Strong><fmt:message key="message.choosetest"/></Strong>
     </div>
 
     <form action="${pageContext.request.contextPath}/user/test" method="post" name="test">
@@ -21,7 +24,6 @@
                 </c:forEach>
             </select>
         </div>
-        <input type="hidden" name="_csrf" value="${_csrf.token}" />
-        <button type="submit" class="btn btn-primary mt-2">Pass Test</button>
+        <button type="submit" class="btn btn-primary mt-2"><fmt:message key="message.passtest"/></button>
     </form>
 </div>

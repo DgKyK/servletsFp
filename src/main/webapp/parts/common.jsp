@@ -1,9 +1,9 @@
 <%@ include file="imports.jsp"%>
 <!doctype html>
-<html lang="en">
+<html lang="${locale}">
 <head>
     <!-- Required meta tags -->
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
@@ -38,24 +38,24 @@
                                 <c:when test="${user.isUser()}">
                                     href="${pageContext.request.contextPath}/user/user_base"
                                 </c:when>
-                            </c:choose>>Home<span class="sr-only">(current)</span></a>
+                            </c:choose>><fmt:message key="message.home"/><span class="sr-only">(current)</span></a>
                 </li>
             </c:if>
             <c:if test="${user.isUser()}">
                 <li class="nav-item active">
-                    <a class="nav-link" href="${pageContext.request.contextPath}/user/user_statistic">My statistic<span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="${pageContext.request.contextPath}/user/user_statistic"><fmt:message key="message.mystatistic"/><span class="sr-only">(current)</span></a>
                 </li>
             </c:if>
             <c:if test="${user.isAdmin()}">
                 <li class="nav-item active">
-                    <a class="nav-link" href="${pageContext.request.contextPath}/admin/admin_statistic">Users statistic<span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="${pageContext.request.contextPath}/admin/admin_statistic"><fmt:message key="message.usersstatistic"/><span class="sr-only">(current)</span></a>
                 </li>
             </c:if>
         </ul>
     </div>
     <div class = "mr-2">
         <select id="locales" class="form-control" style="width: 125px;">
-            <option value="">Language</option>
+            <option value=""><fmt:message key="message.language"/></option>
             <option value="US">EN</option>
             <option value="UA">UA</option>
         </select>
@@ -64,7 +64,7 @@
         <c:if test="${user.isAdmin() || user.isUser()}">
             <form action="${pageContext.request.contextPath}/logout" method="post">
                 <%--<input type="hidden" name="_csrf" value="${_csrf.token}" />--%>
-                <button type="submit" class="btn btn-primary">LogOut</button>
+                <button type="submit" class="btn btn-primary"><fmt:message key="message.loguot"/></button>
             </form>
         </c:if>
 </nav>
@@ -73,3 +73,13 @@
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("#locales").change(function () {
+            var selectedOption = $('#locales').val();
+            if (selectedOption != ''){
+                window.location.replace(window.location.origin + window.location.pathname + '?sessionLocale=' + selectedOption);
+            }
+        });
+    });
+</script>

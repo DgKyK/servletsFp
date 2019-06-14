@@ -3,7 +3,9 @@
 
 <div class="container mt-5 mb-5">
 
-    <h2> Hello from test  </h2>
+    <div class = "mb-2">
+        <h2 class = "text-center"><fmt:message key="message.testresult"/> </h2>
+    </div>
     <c:forEach items="${checkedTest}" var="answ">
         <c:choose>
             <c:when test="${answ.value}">
@@ -19,7 +21,7 @@
         </c:choose>
     </c:forEach>
     <div >
-        <a href="${pageContext.request.contextPath}/user/user_base" type="button" class="btn btn-primary btn-lg">Thanks</a>
+        <a href="${pageContext.request.contextPath}/user/user_base" type="button" class="btn btn-primary btn-lg"><fmt:message key="message.thanks"/></a>
     </div>
 </div>
 

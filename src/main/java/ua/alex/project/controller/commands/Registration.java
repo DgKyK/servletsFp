@@ -5,6 +5,7 @@ import ua.alex.project.model.enums.Role;
 import ua.alex.project.model.entity.User;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.Optional;
 
 public class Registration implements Command {
     @Override
@@ -15,17 +16,22 @@ public class Registration implements Command {
 
         String returnPage = Attributes.PAGE_REGISTRATION;
 
-        boolean loginError = false;
-        boolean passwordError = false;
-        boolean emailError = false;
+        boolean loginRegisterError;
+        boolean passwordRegisterError;
+        boolean emailRegisterError;
+        boolean userExistError;
+
+        Optional<User> userByLogin = USER_SERVICE.getUserByLogin(login);
 
 
-        if ( (loginError = (login == null || login.equals("") || login.matches(Attributes.REGEX_LOGIN)))
-                || (passwordError = (password == null || password.equals("") || password.matches(Attributes.REGEX_PASSWORD)))
-                || (emailError = (email == null || email.equals("")) || email.matches(Attributes.REGEX_EMAIL))) {
-            request.setAttribute("loginError", loginError);
-            request.setAttribute("passwordError", passwordError);
-            request.setAttribute("emailError", emailError);
+        if ( (loginRegisterError = (login == null || login.equals("") || !login.matches(Attributes.REGEX_LOGIN)))
+                | (passwordRegisterError = (password == null || password.equals("") || !password.matches(Attributes.REGEX_PASSWORD)))
+                | (emailRegisterError = (email == null || email.equals("")) || !email.matches(Attributes.REGEX_EMAIL))
+                | (userExistError = userByLogin.isPresent())) {
+            request.getSession().setAttribute(Attributes.REQUEST_LOGIN_REGISTER_ERROR, loginRegisterError);
+            request.getSession().setAttribute(Attributes.REQUEST_PASSWORD_REGISTER_ERROR, passwordRegisterError);
+            request.getSession().setAttribute(Attributes.REQUEST_EMAIL_REGISTER_ERROR, emailRegisterError);
+            request.getSession().setAttribute(Attributes.REQUEST_USER_EXIST_ERROR, userExistError);
             //TODO log.info( "registration error" )
             return returnPage;
         }

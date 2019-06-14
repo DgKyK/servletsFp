@@ -5,12 +5,12 @@
         <table class="table">
             <thead>
             <tr>
-                <th scope="col">Test name</th>
-                <th scope="col">Theme</th>
-                <th scope="col">Questions</th>
-                <th scope="col">Write</th>
-                <th scope="col">Wrong</th>
-                <th scope="col">Status</th>
+                <th scope="col"><fmt:message key="message.testname"/></th>
+                <th scope="col"><fmt:message key="message.theme"/></th>
+                <th scope="col"><fmt:message key="message.questions"/></th>
+                <th scope="col"><fmt:message key="message.write"/></th>
+                <th scope="col"><fmt:message key="message.wrong"/></th>
+                <th scope="col"><fmt:message key="message.status"/></th>
             </tr>
             </thead>
             <tbody>

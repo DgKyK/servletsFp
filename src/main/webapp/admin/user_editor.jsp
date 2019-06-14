@@ -2,20 +2,20 @@
 <jsp:include page="/parts/common.jsp"/>
 <div class="container mt-5 mb-5" >
 <div>
-    <h2 class="text-center mb-4">User Editor</h2>
+    <h2 class="text-center mb-4"><fmt:message key="message.usereditor"/></h2>
 </div>
     <div class = "mt-2">
         <form action="${pageContext.request.contextPath}/admin/admin_base" method="post">
             <input type="hidden" name="userId" value="${editUser.getId()}" />
             <input type="hidden" name="_csrf" value="${_csrf.token}" />
             <div class="form-group row">
-                <label class ="col-sm-2" >Login</label>
+                <label class ="col-sm-2" ><fmt:message key="message.login"/></label>
                 <div class = "col-sm-5">
                     <input type="text" class="form-control" name="newLogin" value="${editUser.getLogin()}">
                 </div>
             </div>
             <div class = "form-group row">
-                <label class ="col-sm-2" >Email</label>
+                <label class ="col-sm-2" ><fmt:message key="message.email"/></label>
                 <div class = "col-sm-5">
                     <input type="text" class="form-control" name="newEmail" value="${editUser.getEmail()}">
                 </div>
@@ -28,7 +28,7 @@
                     </label>
                 </div>
             </c:forEach>
-            <button type="submit" class="btn btn-primary">Edit</button>
+            <button type="submit" class="btn btn-primary"><fmt:message key="message.edit"/></button>
         </form>
     </div>
 </div>

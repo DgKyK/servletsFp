@@ -4,11 +4,11 @@
     <table class="table">
         <thead class="thead-dark">
         <tr>
-            <th scope="col">Login</th>
-            <th scope="col">Tests</th>
-            <th scope="col">Passed</th>
-            <th scope="col">Failed</th>
-            <th scope="col">Activity</th>
+            <th scope="col"><fmt:message key="message.login"/></th>
+            <th scope="col"><fmt:message key="message.tests"/></th>
+            <th scope="col"><fmt:message key="message.passed"/></th>
+            <th scope="col"><fmt:message key="message.failed"/></th>
+            <th scope="col"><fmt:message key="message.activity"/></th>
         </tr>
         </thead>
         <tbody>
