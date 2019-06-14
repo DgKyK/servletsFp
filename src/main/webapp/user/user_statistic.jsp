@@ -1,6 +1,7 @@
 <%@include file="../parts/imports.jsp"%>
 <jsp:include page="/parts/common.jsp"/>
 <div class="container mt-5 mb-5" >
+
     <div>
         <table class="table">
             <thead>
@@ -27,6 +28,36 @@
             </tbody>
         </table>
     </div>
+    <nav aria-label="Navigation for success">
+        <ul class="pagination">
+            <c:if test="${currentPage != 1}">
+                <li class="page-item"><a class="page-link"
+                                         href="${pageContext.request.contextPath}/user/user_statistic?recordsPerPage=${recordsPerPage}&currentPage=${currentPage-1}">Previous</a>
+                </li>
+            </c:if>
+
+            <c:forEach begin="1" end="${noOfPages}" var="i">
+                <c:choose>
+                    <c:when test="${currentPage eq i}">
+                        <li class="page-item active"><a class="page-link">
+                                ${i} <span class="sr-only">(current)</span></a>
+                        </li>
+                    </c:when>
+                    <c:otherwise>
+                        <li class="page-item"><a class="page-link"
+                                                 href="${pageContext.request.contextPath}/user/user_statistic?recordsPerPage=${recordsPerPage}&currentPage=${i}">${i}</a>
+                        </li>
+                    </c:otherwise>
+                </c:choose>
+            </c:forEach>
+
+            <c:if test="${currentPage lt noOfPages}">
+                <li class="page-item"><a class="page-link"
+                                         href="${pageContext.request.contextPath}/user/user_statistic?recordsPerPage=${recordsPerPage}&currentPage=${currentPage+1}">Next</a>
+                </li>
+            </c:if>
+        </ul>
+    </nav>
 
 
 </div>

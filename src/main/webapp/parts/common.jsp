@@ -43,7 +43,7 @@
             </c:if>
             <c:if test="${user.isUser()}">
                 <li class="nav-item active">
-                    <a class="nav-link" href="${pageContext.request.contextPath}/user/user_statistic"><fmt:message key="message.mystatistic"/><span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="${pageContext.request.contextPath}/user/user_statistic?currentPage=1"><fmt:message key="message.mystatistic"/><span class="sr-only">(current)</span></a>
                 </li>
             </c:if>
             <c:if test="${user.isAdmin()}">

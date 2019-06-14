@@ -45,6 +45,45 @@ public class JDBCStudentSuccessDao implements StudentSuccessDao {
     }
 
     @Override
+    public List<StudentSuccess> findLimitViewByUserId(int currentPage, int recordsPerPage, long id) {
+        List<StudentSuccess> successList = new ArrayList<>();
+
+        int start = currentPage * recordsPerPage - recordsPerPage;
+        try(PreparedStatement ps = connection.prepareStatement(bundle.getString(Attributes.DB_SQL_FIND_LIMIT_VIEW_BY_USER_ID))) {
+            ps.setLong(1,id);
+            ps.setInt(2,start);
+            ps.setInt(3,recordsPerPage);
+            ResultSet rs = ps.executeQuery();
+            StudentSuccessMapper mapper = new StudentSuccessMapper();
+            while(rs.next()) {
+                StudentSuccess temp = mapper.extractFromResultSet(rs);
+                successList.add(temp);
+            }
+        } catch(SQLException e) {
+            //TODO log.warn("Exception findLimitViewByUserId() : " + e.getMessage())
+            e.printStackTrace();
+        }
+        return successList;
+
+    }
+
+    @Override
+    public int getRowsCountByUserId(long id) {
+        int numOfRows = 0;
+        try(PreparedStatement ps = connection.prepareStatement(bundle.getString(Attributes.DB_SQL_GET_SUCCES_COUNT_BY_USER_ID))) {
+            ps.setLong(1,id);
+            ResultSet rs = ps.executeQuery();
+            if(rs.next()) {
+                numOfRows = rs.getInt(1);
+            }
+        } catch (SQLException e) {
+            //TODO log.warn("Exception getRowsCountByUserId() : " + e.getMessage())
+            e.printStackTrace();
+        }
+        return numOfRows;
+    }
+
+    @Override
     public void save(StudentSuccess entity) throws SQLException {
         StudentSuccessDto studentSuccessDto = StudentSuccessDto.of(entity);
         try (PreparedStatement ps = connection.prepareStatement(bundle.getString(Attributes.DB_SQL_SAVE_STUDENT_SUCCESS))) {

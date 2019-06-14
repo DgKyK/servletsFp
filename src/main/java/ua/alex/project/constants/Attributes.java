@@ -9,7 +9,7 @@ public interface Attributes {
     String DB_PASSWORD = "db.password";
     String DB_URL = "db.url";
 
-
+    int RECORD_PER_PAGE = 10;
 
     String DB_SQL_ALL_USERS = "sql.usersFindAll";
     String DB_SQL_SAVE_USER = "sql.usersSave";
@@ -51,6 +51,7 @@ public interface Attributes {
 
     String PAGE_LOGIN = "/login.jsp";
     String PAGE_LOGIN_FIRST = "/login.jsp";
+    String PAGE_LOGIN_FIRST_REDIRECT = "redirect:/loginFirst";
     String PAGE_LOGIN_REDIRECT = "redirect:/login.jsp";
     String PAGE_LOGOUT = "redirect:/loginFirst";
     String PAGE_DOUBLE_AUTH_ERROR = "redirect:/doubleAuthError";
@@ -81,4 +82,6 @@ public interface Attributes {
     String REGEX_PASSWORD = ".{4,15}";
     String REGEX_EMAIL = "\\w{2,}@[a-z]{3,}\\.[a-z]{2,}";
 
+    String DB_SQL_FIND_LIMIT_VIEW_BY_USER_ID = "sql.successFindLimitViewByUserId";
+    String DB_SQL_GET_SUCCES_COUNT_BY_USER_ID = "sql.successGetRowsCountByUserId";
 }

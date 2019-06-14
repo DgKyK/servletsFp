@@ -8,4 +8,8 @@ import java.util.Map;
 public interface StudentSuccessService {
     void saveCurrentResult(Map<String,Boolean> resultTest, String testInfo, String userName);
     List<StudentSuccess> findAllByUserLogin(String userName);
+
+    List<StudentSuccess> getPageableViewByUserId(int currentPage, int recordsPerPage, long userId);
+
+    int getNumberOfRowsByUserId(long id);
 }

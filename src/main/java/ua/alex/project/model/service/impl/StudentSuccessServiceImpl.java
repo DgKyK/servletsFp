@@ -66,4 +66,24 @@ public class StudentSuccessServiceImpl implements StudentSuccessService {
         }
         return successList;
     }
+
+    @Override
+    public List<StudentSuccess> getPageableViewByUserId(int currentPage, int recordsPerPage, long userId) {
+
+        List<StudentSuccess> successList;
+        try(StudentSuccessDao studentSuccessDao = daoFactory.createStudentSuccessDao()) {
+            successList = studentSuccessDao.findLimitViewByUserId(currentPage, recordsPerPage, userId);
+        }
+
+        return successList;
+    }
+
+    @Override
+    public int getNumberOfRowsByUserId(long id) {
+        int rows;
+        try(StudentSuccessDao dao = daoFactory.createStudentSuccessDao()) {
+            rows = dao.getRowsCountByUserId(id);
+        }
+        return rows;
+    }
 }

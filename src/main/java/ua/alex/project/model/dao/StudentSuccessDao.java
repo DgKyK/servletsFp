@@ -6,4 +6,8 @@ import java.util.List;
 
 public interface StudentSuccessDao extends GenericDao<StudentSuccess> {
     List<StudentSuccess> findAllByUserId(long id);
+
+    List<StudentSuccess> findLimitViewByUserId(int currentPage, int recordsPerPage,  long id);
+
+    int getRowsCountByUserId(long id);
 }
