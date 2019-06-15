@@ -19,7 +19,7 @@ public class UserPermitFilter extends AbstractFilter {
             if(user.get().getRole().equals(Role.USER)) {
                 filterChain.doFilter(request, response);
             } else if(user.get().getRole().equals(Role.ADMIN)) {
-                //TODO logging this situation
+                logger.warn("Admin : " + user.get().getLogin() + " try to access user page");
                 response.sendRedirect(Attributes.PAGE_ADMIN_HOME_REDIRECT);
             }
 

@@ -32,7 +32,7 @@ public class Registration implements Command {
             request.getSession().setAttribute(Attributes.REQUEST_PASSWORD_REGISTER_ERROR, passwordRegisterError);
             request.getSession().setAttribute(Attributes.REQUEST_EMAIL_REGISTER_ERROR, emailRegisterError);
             request.getSession().setAttribute(Attributes.REQUEST_USER_EXIST_ERROR, userExistError);
-            //TODO log.info( "registration error" )
+            LOGGER.info(this.getClass().getSimpleName() + " - registration error : " + "Login : " + login + "; email : " + email);
             return returnPage;
         }
 

@@ -10,14 +10,18 @@ import java.util.Optional;
 public class EditUser implements Command {
     @Override
     public String execute(HttpServletRequest request) {
-        long userId = Long.parseLong(request.getParameter(Attributes.REQUEST_USER_ID));
+        String userIdFromPage = request.getParameter(Attributes.REQUEST_USER_ID);
+        if (userIdFromPage != null) {
+            long userId = Long.parseLong(request.getParameter(Attributes.REQUEST_USER_ID));
 
-        System.out.println(userId);
-        Optional<User> userById = USER_SERVICE.getUserById(userId);
-        Role[] roles = Role.values();
+            System.out.println(userId);
+            Optional<User> userById = USER_SERVICE.getUserById(userId);
+            Role[] roles = Role.values();
 
-        request.getSession().setAttribute(Attributes.REQUEST_EDIT_USER, userById.get());
-        request.getSession().setAttribute(Attributes.REQUEST_ALL_ROLES, roles);
+            request.getSession().setAttribute(Attributes.REQUEST_EDIT_USER, userById.get());
+            request.getSession().setAttribute(Attributes.REQUEST_ALL_ROLES, roles);
+        }
+
         return Attributes.PAGE_USER_EDITOR;
     }
 }

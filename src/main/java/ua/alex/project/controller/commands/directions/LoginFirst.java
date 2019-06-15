@@ -9,6 +9,7 @@ public class LoginFirst implements Command {
     @Override
     public String execute(HttpServletRequest request) {
         request.getSession().setAttribute(Attributes.REQUEST_LOGIN_ERROR, false);
+        request.getSession().setAttribute(Attributes.REQUEST_DOUBLE_AUTH_ERROR, false);
         return Attributes.PAGE_LOGIN_FIRST;
     }
 }

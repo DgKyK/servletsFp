@@ -1,5 +1,7 @@
 package ua.alex.project.model.dao.impl;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import ua.alex.project.constants.Attributes;
 import ua.alex.project.model.dao.TestDao;
 import ua.alex.project.model.dao.mapper.TestMapper;
@@ -13,6 +15,7 @@ import java.util.Optional;
 import java.util.ResourceBundle;
 
 public class JDBCTestDao implements TestDao {
+    private Logger logger = LogManager.getLogger(getClass());
     private Connection connection;
     private ResourceBundle bundle;
 
@@ -32,7 +35,7 @@ public class JDBCTestDao implements TestDao {
                 allTests.add(test);                
             }
         } catch (SQLException e) {
-            //TODO log.WARN( "Exception : " + e.printStackTrace()")
+            logger.error("exception called : " + e.getMessage());
             e.printStackTrace();
         }
         return allTests;
@@ -49,7 +52,7 @@ public class JDBCTestDao implements TestDao {
                 return Optional.of(testMapper.extractFromResultSet(rs));
             }
         } catch (SQLException e) {
-            //TODO log.warn("Test with id : " + id + " not found");
+            logger.error("exception called : " + e.getMessage());
             e.printStackTrace();
         }
         return Optional.empty();
@@ -65,7 +68,7 @@ public class JDBCTestDao implements TestDao {
                 return Optional.of(testMapper.extractFromResultSet(rs));
             }
         } catch (SQLException e) {
-            //TODO log.warn("Test with name : " + testName + " not found");
+            logger.error("exception called : " + e.getMessage());
             e.printStackTrace();
         }
         return Optional.empty();
@@ -81,7 +84,7 @@ public class JDBCTestDao implements TestDao {
         try {
             connection.close();
         } catch (SQLException e) {
-            //TODO logging for this case
+            logger.error("Closing connection ERROR" + e.getMessage());
             throw new RuntimeException(e);
         }
     }

@@ -1,5 +1,7 @@
 package ua.alex.project.model.dao.impl;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import ua.alex.project.model.dao.*;
 
 import javax.sql.DataSource;
@@ -8,6 +10,7 @@ import java.sql.SQLException;
 
 
 public class JDBCDaoFactory extends DaoFactory {
+    private Logger logger = LogManager.getLogger(getClass());
     private DataSource dataSource = ConnectionPoolHolder.getDataSource();
 
     @Override
@@ -35,7 +38,7 @@ public class JDBCDaoFactory extends DaoFactory {
         try {
             return dataSource.getConnection();
         } catch (SQLException e) {
-            //TODO log.warn("Cant get connection from Pool : " + e.printStackTrace);
+            logger.warn("Cant get connection from Pool : " + e.getMessage());
             throw new RuntimeException(e);
         }
     }

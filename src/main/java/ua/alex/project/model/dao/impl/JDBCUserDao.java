@@ -1,5 +1,7 @@
 package ua.alex.project.model.dao.impl;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import ua.alex.project.constants.Attributes;
 import ua.alex.project.model.dao.UserDao;
 import ua.alex.project.model.dao.mapper.UserMapper;
@@ -12,6 +14,7 @@ import java.util.Optional;
 import java.util.ResourceBundle;
 
 public class JDBCUserDao implements UserDao {
+    private Logger logger = LogManager.getLogger(getClass());
     private Connection connection;
     private ResourceBundle bundle;
 
@@ -31,7 +34,7 @@ public class JDBCUserDao implements UserDao {
                 allUsers.add(user);
             }
         } catch (SQLException e) {
-            //TODO create logging for this case
+            logger.error("exception called : " + e.getMessage());
             e.printStackTrace();
         }
         return allUsers;
@@ -50,7 +53,7 @@ public class JDBCUserDao implements UserDao {
                return user;
             }
         } catch (SQLException e) {
-            //TODO logging this case
+            logger.error("exception called : " + e.getMessage());
             e.printStackTrace();
         }
         return user;
@@ -66,7 +69,7 @@ public class JDBCUserDao implements UserDao {
             ps.setLong(4,newUser.getId());
             ps.executeUpdate();
         } catch (SQLException e) {
-            //TODO log.warn("exception when udating user : " + e.printStackTrace());
+            logger.error("exception called : " + e.getMessage());
             e.printStackTrace();
         }
     }
@@ -80,7 +83,7 @@ public class JDBCUserDao implements UserDao {
             ps.setString(4, user.getRole().toString());
             ps.executeUpdate();
         } catch (SQLException e) {
-            //TODO logging for this case
+            logger.error("exception called : " + e.getMessage());
             e.printStackTrace();
         }
     }
@@ -95,7 +98,7 @@ public class JDBCUserDao implements UserDao {
                 return Optional.of(userMapper.extractFromResultSet(rs));
             }
         } catch (SQLException e) {
-            //TODO logging for this case
+            logger.error("exception called : " + e.getMessage());
             e.printStackTrace();
         }
         return Optional.empty();
@@ -106,7 +109,7 @@ public class JDBCUserDao implements UserDao {
         try {
             connection.close();
         } catch (SQLException e) {
-            //TODO logging for this case
+            logger.error("Closing connection ERROR" + e.getMessage());
             throw new RuntimeException(e);
         }
     }

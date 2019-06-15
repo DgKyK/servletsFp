@@ -1,5 +1,7 @@
 package ua.alex.project.controller.commands.util;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import ua.alex.project.constants.Attributes;
 import ua.alex.project.controller.commands.*;
 import ua.alex.project.controller.commands.directions.LoginFirst;
@@ -13,6 +15,8 @@ import java.util.HashSet;
 import java.util.Map;
 
 public class CommandsUtil {
+
+    private static final Logger logger = LogManager.getLogger();
 
 
     public static Map<String, Command> getCommandsMapInit() {
@@ -28,6 +32,7 @@ public class CommandsUtil {
         commands.put(Attributes.COMMAND_USER_EDITOR, new EditUser());
         commands.put(Attributes.COMMAND_LOGIN_FIRST, new LoginFirst());
         commands.put(Attributes.COMMAND_REGISTRATION_FIRST, new RegistrationFirst());
+        commands.put(Attributes.COMMAND_DOUBLE_AUTH_ERROR, new DoubleAuthError());
 
         return commands;
     }
@@ -37,7 +42,7 @@ public class CommandsUtil {
         HashSet<String> allUsers = (HashSet<String>) request.getServletContext().getAttribute(Attributes.REQUEST_All_USERS);
 
         if(allUsers.contains(user.getLogin())) {
-            //TODO logging warn double auth
+            logger.warn("Double auth error by user : " + user.getLogin());
             return Attributes.PAGE_DOUBLE_AUTH_ERROR; // add such command in commands and return simple LOGIN_OR_REGISTER
         }
 
@@ -45,8 +50,7 @@ public class CommandsUtil {
 
         allUsers.add(user.getLogin());
         request.getServletContext().setAttribute(Attributes.REQUEST_All_USERS, allUsers);
-        //TODO logging INFO user have been logged
-
+            logger.info("user have been logged : " + user.getLogin());
         if (user.getRole().equals(Role.ADMIN)) {
             return Attributes.PAGE_ADMIN_HOME_REDIRECT;
         } else if( user.getRole().equals(Role.USER)) {

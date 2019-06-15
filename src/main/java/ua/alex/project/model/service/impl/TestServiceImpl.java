@@ -1,5 +1,8 @@
 package ua.alex.project.model.service.impl;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import ua.alex.project.controller.exception.DataNotFoundException;
 import ua.alex.project.model.dao.DaoFactory;
 import ua.alex.project.model.dao.QuestionDao;
 import ua.alex.project.model.dao.TestDao;
@@ -8,11 +11,13 @@ import ua.alex.project.model.entity.Test;
 import ua.alex.project.model.service.TestService;
 
 import javax.swing.text.html.Option;
+import javax.xml.crypto.Data;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
 public class TestServiceImpl implements TestService {
+    private Logger logger = LogManager.getLogger(getClass());
 
     private DaoFactory daoFactory = DaoFactory.getInstance();
 
@@ -33,8 +38,9 @@ public class TestServiceImpl implements TestService {
             if (testFromDb.isPresent()) {
                 return testFromDb.get();
             } else {
-                //TODO logging this case and add your own exception (TestNotFoundException)
-                throw new RuntimeException("PassedTest with id : " + testId + "not found");
+                //add your own exception (TestNotFoundException)
+                logger.error("test with id : " + testInfo[0] + " not found");
+                throw new DataNotFoundException("Test with id : " + testId + "not found");
             }
         }
     }
@@ -51,14 +57,14 @@ public class TestServiceImpl implements TestService {
     }
 
     @Override
-    public Test findTestByName(String testName) {
+    public Test findTestByName(String testName){
         try(TestDao testDao = daoFactory.createTestDao()) {
             Optional<Test> testFromDb = testDao.findByName(testName);
             if (testFromDb.isPresent()) {
                 return testFromDb.get();
             } else {
-                //TODO logging this case and add your own exception (TestNotFoundException)
-                throw new RuntimeException("PassedTest with name : " + testName+ "not found");
+                logger.error("Test with name : " + testName+ "not found");
+                throw new DataNotFoundException("Test with name : " + testName+ "not found");
             }
         }
     }
@@ -70,8 +76,8 @@ public class TestServiceImpl implements TestService {
             if (testFromDb.isPresent()) {
                 return testFromDb.get();
             } else {
-                //TODO logging this case and add your own exception (TestNotFoundException)
-                throw new RuntimeException("Test with id : " + id + "not found");
+                logger.error("Test with id : " + id + "not found");
+                throw new DataNotFoundException("Test with id : " + id + "not found");
             }
         }
     }

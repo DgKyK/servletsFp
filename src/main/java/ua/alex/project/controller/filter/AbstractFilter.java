@@ -1,5 +1,7 @@
 package ua.alex.project.controller.filter;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import ua.alex.project.constants.Attributes;
 import ua.alex.project.model.entity.User;
 
@@ -11,6 +13,7 @@ import java.io.IOException;
 import java.util.Optional;
 
 public abstract class AbstractFilter implements Filter {
+    protected Logger logger = LogManager.getLogger(this.getClass());
 
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {

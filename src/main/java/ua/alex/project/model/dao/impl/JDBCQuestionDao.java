@@ -1,5 +1,7 @@
 package ua.alex.project.model.dao.impl;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import ua.alex.project.constants.Attributes;
 import ua.alex.project.model.dao.QuestionDao;
 import ua.alex.project.model.dao.mapper.QuestionMapper;
@@ -15,6 +17,7 @@ import java.util.Optional;
 import java.util.ResourceBundle;
 
 public class JDBCQuestionDao implements QuestionDao {
+    private Logger logger = LogManager.getLogger(getClass());
     private Connection connection;
     private ResourceBundle bundle;
 
@@ -35,7 +38,7 @@ public class JDBCQuestionDao implements QuestionDao {
                  questions.add(tempQuestion);
             }
         } catch (SQLException e) {
-            //TODO log.warn("exeption when find quest by test_id" + e.getMessage)
+            logger.error("Exception when find quest by test_id" + e.getMessage());
         }
         return questions;
     }
@@ -60,8 +63,8 @@ public class JDBCQuestionDao implements QuestionDao {
         try {
             connection.close();
         } catch (SQLException e) {
-            //TODO logging for this case
-            throw new RuntimeException(e);
+            logger.error("Closing connection ERROR" + e.getMessage());
+            e.printStackTrace();
         }
     }
 }

@@ -9,6 +9,12 @@
             <fmt:message key="message.invalidpassword"/>
         </div>
     </c:if>
+    <c:if test="${doubleAuthError}">
+        <div class="alert alert-danger col-sm-3" role="alert">
+            <fmt:message key="message.alreadyauthorized"/>
+        </div>
+    </c:if>
+
     <div>
         <form action="${pageContext.request.contextPath}/login" method="post">
             <div class="form-group row">

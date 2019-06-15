@@ -32,7 +32,8 @@
         <ul class="pagination">
             <c:if test="${currentPage != 1}">
                 <li class="page-item"><a class="page-link"
-                                         href="${pageContext.request.contextPath}/user/user_statistic?recordsPerPage=${recordsPerPage}&currentPage=${currentPage-1}">Previous</a>
+                        href="${pageContext.request.contextPath}/user/user_statistic?recordsPerPage=${recordsPerPage}&currentPage=${currentPage-1}">
+                    <fmt:message key="message.previous"/> </a>
                 </li>
             </c:if>
 
@@ -53,7 +54,7 @@
 
             <c:if test="${currentPage lt noOfPages}">
                 <li class="page-item"><a class="page-link"
-                                         href="${pageContext.request.contextPath}/user/user_statistic?recordsPerPage=${recordsPerPage}&currentPage=${currentPage+1}">Next</a>
+                                         href="${pageContext.request.contextPath}/user/user_statistic?recordsPerPage=${recordsPerPage}&currentPage=${currentPage+1}"><fmt:message key="message.next"/></a>
                 </li>
             </c:if>
         </ul>

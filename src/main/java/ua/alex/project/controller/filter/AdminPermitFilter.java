@@ -22,7 +22,7 @@ public class AdminPermitFilter extends AbstractFilter {
             if(user.get().getRole().equals(Role.ADMIN)) {
                 filterChain.doFilter(request, response);
             } else if(user.get().getRole().equals(Role.USER)) {
-                //TODO logging this situation
+                logger.warn("user : " + user.get().getLogin() + " try to access admin page!!!");
                 response.sendRedirect(Attributes.PAGE_USER_HOME_REDIRECT);
             }
         } else {

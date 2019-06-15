@@ -48,6 +48,7 @@ public interface Attributes {
     String REQUEST_EMAIL_REGISTER_ERROR = "emailRegisterError";
     String REQUEST_USER_EXIST_ERROR = "userExistError";
     String REQUEST_SESSION_LOCALE = "sessionLocale";
+    String REQUEST_DOUBLE_AUTH_ERROR = "doubleAuthError";
 
     String PAGE_LOGIN = "/login.jsp";
     String PAGE_LOGIN_FIRST = "/login.jsp";
@@ -77,6 +78,7 @@ public interface Attributes {
     String COMMAND_TEST = "test";
     String COMMAND_USER_EDITOR = "user_editor";
     String COMMAND_LOGIN_FIRST = "loginFirst";
+    String COMMAND_DOUBLE_AUTH_ERROR = "doubleAuthError";
 
     String REGEX_LOGIN = "[^_\\\\.&,#@!\\\\?\\\\(\\\\)\\\\-\\\\=\\\\+\\\\\\\\`\\\\~\\\\s][A-za-z]{1,5}[A-Za-z0-9_]{0,15}";
     String REGEX_PASSWORD = ".{4,15}";

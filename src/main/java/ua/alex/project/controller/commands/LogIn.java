@@ -1,5 +1,7 @@
 package ua.alex.project.controller.commands;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import ua.alex.project.constants.Attributes;
 import ua.alex.project.controller.commands.util.CommandsUtil;
 import ua.alex.project.model.entity.User;
@@ -8,10 +10,12 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.Optional;
 
 public class LogIn implements Command {
+    private Logger logger = LogManager.getLogger(this.getClass());
     @Override
     public String execute(HttpServletRequest request) {
         String login = request.getParameter(Attributes.REQUEST_LOGIN);
         String password = request.getParameter(Attributes.REQUEST_PASSWORD);
+        String doubleAuthError = request.getParameter(Attributes.REQUEST_DOUBLE_AUTH_ERROR);
         String returnPage = Attributes.PAGE_LOGIN;
         Optional<User> userFromBd = USER_SERVICE.getUserByLogin(login);
 
@@ -20,6 +24,8 @@ public class LogIn implements Command {
         } else {
             request.getSession().setAttribute(Attributes.REQUEST_LOGIN_ERROR, true);
         }
+
+
 
         return returnPage;
     }

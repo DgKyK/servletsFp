@@ -1,5 +1,7 @@
 package ua.alex.project.model.dao.impl;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import ua.alex.project.constants.Attributes;
 import ua.alex.project.model.dao.StudentSuccessDao;
 import ua.alex.project.model.dao.dto.StudentSuccessDto;
@@ -16,6 +18,7 @@ import java.util.Optional;
 import java.util.ResourceBundle;
 
 public class JDBCStudentSuccessDao implements StudentSuccessDao {
+    private Logger logger = LogManager.getLogger(getClass());
 
     private Connection connection;
     private ResourceBundle bundle;
@@ -38,7 +41,7 @@ public class JDBCStudentSuccessDao implements StudentSuccessDao {
                 successList.add(success);
             }
         } catch (SQLException e) {
-            //TODO log.warn
+            logger.error("exception called : " + e.getMessage());
             e.printStackTrace();
         }
         return successList;
@@ -60,7 +63,7 @@ public class JDBCStudentSuccessDao implements StudentSuccessDao {
                 successList.add(temp);
             }
         } catch(SQLException e) {
-            //TODO log.warn("Exception findLimitViewByUserId() : " + e.getMessage())
+            logger.error("exception called : " + e.getMessage());
             e.printStackTrace();
         }
         return successList;
@@ -77,7 +80,7 @@ public class JDBCStudentSuccessDao implements StudentSuccessDao {
                 numOfRows = rs.getInt(1);
             }
         } catch (SQLException e) {
-            //TODO log.warn("Exception getRowsCountByUserId() : " + e.getMessage())
+            logger.error("exception called : " + e.getMessage());
             e.printStackTrace();
         }
         return numOfRows;
@@ -95,7 +98,7 @@ public class JDBCStudentSuccessDao implements StudentSuccessDao {
             ps.setString(6, studentSuccessDto.getStatus());
             ps.executeUpdate();
         } catch (SQLException e) {
-            //TODO logging for this case
+            logger.error("exception called : " + e.getMessage());
             e.printStackTrace();
         }
     }
@@ -115,8 +118,8 @@ public class JDBCStudentSuccessDao implements StudentSuccessDao {
         try {
             connection.close();
         } catch (SQLException e) {
-            //TODO logging for this case
-            throw new RuntimeException(e);
+            logger.error("Closing connection ERROR" + e.getMessage());
+            e.printStackTrace();
         }
     }
 }

@@ -1,5 +1,7 @@
 package ua.alex.project.model.service.impl;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import ua.alex.project.model.dao.DaoFactory;
 import ua.alex.project.model.dao.StudentSuccessDao;
 import ua.alex.project.model.entity.StudentSuccess;
@@ -17,6 +19,8 @@ import java.util.Map;
 import java.util.Optional;
 
 public class StudentSuccessServiceImpl implements StudentSuccessService {
+
+    private Logger logger = LogManager.getLogger(getClass());
 
     private DaoFactory daoFactory = DaoFactory.getInstance();
     private TestService testService;
@@ -51,7 +55,7 @@ public class StudentSuccessServiceImpl implements StudentSuccessService {
         try(StudentSuccessDao studentSuccessDao = daoFactory.createStudentSuccessDao()) {
             studentSuccessDao.save(currentResult);
         } catch (SQLException e) {
-            //TODO log.warn("failed save : " + e.getMessage())
+            logger.error("fail of saving test result : " + e.getMessage());
             e.printStackTrace();
         }
     }
