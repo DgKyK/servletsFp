@@ -24,10 +24,8 @@ public class PermitAllFilter extends AbstractFilter {
             filterChain.doFilter(request,response);
         } else if(user.get().getRole().equals(Role.ADMIN)) {
             response.sendRedirect(Attributes.PAGE_ADMIN_HOME_REDIRECT);
-            //request.getRequestDispatcher(Attributes.PAGE_ADMIN_HOME_REDIRECT).forward(request, response);
         } else if(user.get().getRole().equals(Role.USER)) {
             response.sendRedirect(Attributes.PAGE_USER_HOME_REDIRECT);
-            //request.getRequestDispatcher(Attributes.PAGE_USER_HOME_REDIRECT).forward(request, response);
         }
     }
 }

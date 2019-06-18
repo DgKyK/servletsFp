@@ -15,7 +15,7 @@ import java.util.Optional;
 /**
  * Filter for admin pages accessing;
  */
-@WebFilter(urlPatterns = {"/admin/*"})
+@WebFilter(urlPatterns = {"/admin/*", "/admin_base", "/admin_statistic", "/user_editor"})
 public class AdminPermitFilter extends AbstractFilter {
     @Override
     protected void filter(HttpServletRequest request,

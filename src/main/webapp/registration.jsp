@@ -39,7 +39,7 @@
         <div class = "form-group row">
             <label class ="col-sm-2"><fmt:message key="message.email"/></label>
             <div class = "col-sm-5">
-                <input type="email" class="form-control <c:if test="${emailRegisterError}">is-invalid</c:if>"
+                <input type="text" class="form-control <c:if test="${emailRegisterError}">is-invalid</c:if>"
                        name="email" placeholder="<fmt:message key="message.email"/>">
                 <c:if test="${emailRegisterError}">
                     <div class = "invalid-feedback">

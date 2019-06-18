@@ -15,7 +15,7 @@ import java.util.Optional;
 /**
  * Filter for user pages accessing;
  */
-@WebFilter (urlPatterns = {"/user/*"})
+@WebFilter (urlPatterns = {"/user/*", "/user_base", "/user_statistic", "/test"})
 public class UserPermitFilter extends AbstractFilter {
     @Override
     protected void filter(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain, Optional<User> user) throws ServletException, IOException {

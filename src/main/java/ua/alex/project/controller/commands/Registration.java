@@ -3,6 +3,7 @@ package ua.alex.project.controller.commands;
 import ua.alex.project.constants.Attributes;
 import ua.alex.project.model.enums.Role;
 import ua.alex.project.model.entity.User;
+import ua.alex.project.model.utils.PasswordEncoder;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.Optional;
@@ -24,7 +25,6 @@ public class Registration implements Command {
         boolean passwordRegisterError;
         boolean emailRegisterError;
         boolean userExistError;
-
         Optional<User> userByLogin = USER_SERVICE.getUserByLogin(login);
 
 
@@ -42,12 +42,12 @@ public class Registration implements Command {
 
         User user = User.newBuilder()
                 .setLogin(login)
-                .setPassword(password)
+                .setPassword(PasswordEncoder.encodePassword(password))
                 .setEmail(email)
                 .setRole(Role.USER)
                 .build();
         USER_SERVICE.addUser(user);
-        returnPage = Attributes.PAGE_LOGIN_REDIRECT;
+        returnPage = Attributes.PAGE_LOGIN_FIRST_REDIRECT;
 
 
         return returnPage;
