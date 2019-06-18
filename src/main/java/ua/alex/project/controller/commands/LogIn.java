@@ -9,6 +9,9 @@ import ua.alex.project.model.entity.User;
 import javax.servlet.http.HttpServletRequest;
 import java.util.Optional;
 
+/**
+ * Description : command that responsible for user authorisation;
+ */
 public class LogIn implements Command {
     private Logger logger = LogManager.getLogger(this.getClass());
     @Override

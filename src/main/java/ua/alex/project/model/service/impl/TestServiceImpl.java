@@ -16,6 +16,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * Implementation of TestService interface;
+ */
 public class TestServiceImpl implements TestService {
     private Logger logger = LogManager.getLogger(getClass());
 

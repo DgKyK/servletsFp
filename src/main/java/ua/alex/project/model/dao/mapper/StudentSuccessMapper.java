@@ -13,6 +13,10 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Optional;
 
+
+/**
+ * class that helps to map the StudentSuccess entity from DB;
+ */
 public class StudentSuccessMapper implements ObjectMapper<StudentSuccess> {
     @Override
     public StudentSuccess extractFromResultSet(ResultSet rs) throws SQLException {

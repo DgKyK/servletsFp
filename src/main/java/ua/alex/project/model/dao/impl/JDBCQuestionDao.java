@@ -16,6 +16,9 @@ import java.util.List;
 import java.util.Optional;
 import java.util.ResourceBundle;
 
+/**
+ * Class that implement QuestionDao Interface with specific methods;
+ */
 public class JDBCQuestionDao implements QuestionDao {
     private Logger logger = LogManager.getLogger(getClass());
     private Connection connection;

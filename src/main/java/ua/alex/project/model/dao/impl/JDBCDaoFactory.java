@@ -8,7 +8,9 @@ import javax.sql.DataSource;
 import java.sql.Connection;
 import java.sql.SQLException;
 
-
+/**
+ * Implementation of DaoFactory abstract class;
+ */
 public class JDBCDaoFactory extends DaoFactory {
     private Logger logger = LogManager.getLogger(getClass());
     private DataSource dataSource = ConnectionPoolHolder.getDataSource();

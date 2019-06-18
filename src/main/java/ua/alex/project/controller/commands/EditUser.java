@@ -7,6 +7,9 @@ import ua.alex.project.model.enums.Role;
 import javax.servlet.http.HttpServletRequest;
 import java.util.Optional;
 
+/**
+ * Description : command that handle function of editing users by admin;
+ */
 public class EditUser implements Command {
     @Override
     public String execute(HttpServletRequest request) {

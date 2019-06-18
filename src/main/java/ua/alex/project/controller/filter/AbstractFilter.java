@@ -12,6 +12,9 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.Optional;
 
+/**
+ * General class for filters;
+ */
 public abstract class AbstractFilter implements Filter {
     protected Logger logger = LogManager.getLogger(this.getClass());
 

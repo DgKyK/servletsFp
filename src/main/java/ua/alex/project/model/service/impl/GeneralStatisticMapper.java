@@ -11,7 +11,9 @@ import ua.alex.project.model.service.UserService;
 import java.util.ArrayList;
 import java.util.List;
 
-
+/**
+ * Class that helps to map General Statistic of all users for Admin;
+ */
 public class GeneralStatisticMapper {
     private StudentSuccessService studentSuccessService;
 

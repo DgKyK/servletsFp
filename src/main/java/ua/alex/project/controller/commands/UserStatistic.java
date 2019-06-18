@@ -10,6 +10,10 @@ import ua.alex.project.model.entity.User;
 
 import java.util.List;
 
+
+/**
+ * Description : command that handle personal user statistic and processing;
+ */
 public class UserStatistic implements Command {
     @Override
     public String execute(HttpServletRequest request) {

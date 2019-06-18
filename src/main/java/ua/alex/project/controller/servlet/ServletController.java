@@ -9,6 +9,9 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.Map;
 
+/**
+ * Main servletController that manage all processes of program;
+ */
 public class ServletController extends javax.servlet.http.HttpServlet {
     private Map<String, Command> commands;
 

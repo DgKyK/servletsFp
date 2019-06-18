@@ -10,6 +10,9 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.Optional;
 
+/**
+ * Filter for type and encoding of displaying information;
+ */
 @WebFilter(urlPatterns = "/")
 public class EncodingFilter extends AbstractFilter{
 

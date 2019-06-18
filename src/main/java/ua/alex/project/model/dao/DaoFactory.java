@@ -2,6 +2,9 @@ package ua.alex.project.model.dao;
 
 import ua.alex.project.model.dao.impl.JDBCDaoFactory;
 
+/**
+ * Abstract factory pattern for DAO
+ */
 public abstract class DaoFactory {
     private static DaoFactory daoFactory;
 

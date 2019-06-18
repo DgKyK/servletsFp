@@ -4,6 +4,11 @@ import ua.alex.project.constants.Attributes;
 
 import javax.servlet.http.HttpServletRequest;
 
+
+
+/**
+ * Description : command that responsible for double authentication case;
+ */
 public class DoubleAuthError implements Command {
     @Override
     public String execute(HttpServletRequest request) {

@@ -7,6 +7,9 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * class that responsible for tet review(checking for mistakes);
+ */
 public class TestChecker {
 
     public static Map<String, Boolean> getTestReview(List<Question> questions, Map<Integer, Answer> passedTest) {

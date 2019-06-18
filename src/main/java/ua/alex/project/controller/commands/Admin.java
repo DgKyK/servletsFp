@@ -8,6 +8,10 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * Description : command that handle Admin home page;
+ */
+
 public class Admin implements Command{
 
 

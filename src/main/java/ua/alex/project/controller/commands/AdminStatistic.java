@@ -7,6 +7,10 @@ import ua.alex.project.model.service.impl.GeneralStatisticMapper;
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
+
+/**
+ * Description : command that handle general users statistic;
+ */
 public class AdminStatistic implements Command {
     @Override
     public String execute(HttpServletRequest request) {

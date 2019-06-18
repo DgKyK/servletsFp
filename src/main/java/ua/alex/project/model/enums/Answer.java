@@ -2,6 +2,9 @@ package ua.alex.project.model.enums;
 
 import java.util.Random;
 
+/**
+ * Enum for Question`s answer variants;
+ */
 public enum Answer {
     A, B, C;
 

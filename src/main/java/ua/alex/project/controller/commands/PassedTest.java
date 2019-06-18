@@ -12,6 +12,9 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * Description : command that responsible for passing and getting results of already passed test;
+ */
 public class PassedTest implements Command {
     @Override
     public String execute(HttpServletRequest request) {

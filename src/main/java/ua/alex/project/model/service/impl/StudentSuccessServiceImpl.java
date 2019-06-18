@@ -18,6 +18,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
+/**
+ * Implementation of StudentSuccessService interface;
+ */
 public class StudentSuccessServiceImpl implements StudentSuccessService {
 
     private Logger logger = LogManager.getLogger(getClass());

@@ -4,6 +4,9 @@ import ua.alex.project.model.entity.StudentSuccess;
 
 import java.util.Comparator;
 
+/**
+ * Comparator for StudentSuccess entity
+ */
 public class StudentSuccessComparator implements Comparator<StudentSuccess> {
     @Override
     public int compare(StudentSuccess o1, StudentSuccess o2) {

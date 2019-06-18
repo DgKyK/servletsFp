@@ -11,6 +11,9 @@ import ua.alex.project.model.service.impl.UserServiceImpl;
 
 import javax.servlet.http.HttpServletRequest;
 
+/**
+ * This is the main interface for commands;
+ */
 public interface Command {
     Logger LOGGER = LogManager.getLogger();
     UserService USER_SERVICE = new UserServiceImpl();

@@ -8,6 +8,9 @@ import javax.swing.text.html.Option;
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * Interface that consist of all needed methods of business logic that needs for tests;
+ */
 public interface TestService {
     List<Test> findAllTests();
     Test findTestByChosenTest(String chosenTest);

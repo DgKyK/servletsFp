@@ -11,6 +11,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.Optional;
+
+/**
+ * Filter that allows full access for concrete url;
+ */
 @WebFilter(urlPatterns = {"/login", "/registration", "/index"})
 public class PermitAllFilter extends AbstractFilter {
     @Override

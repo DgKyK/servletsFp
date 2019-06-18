@@ -7,6 +7,10 @@ import ua.alex.project.model.entity.User;
 import javax.servlet.http.HttpServletRequest;
 import java.util.Optional;
 
+
+/**
+ * Description : simple registration of user and validation of inputted data;
+ */
 public class Registration implements Command {
     @Override
     public String execute(HttpServletRequest request) {

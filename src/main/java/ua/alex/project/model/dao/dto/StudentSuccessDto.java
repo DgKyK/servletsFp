@@ -2,6 +2,9 @@ package ua.alex.project.model.dao.dto;
 
 import ua.alex.project.model.entity.StudentSuccess;
 
+/**
+ * DTO for StudentSuccess that helps to represent that entity to form in which that entity present in DB;
+ */
 public class StudentSuccessDto {
     private long id;
     private int questNumber;

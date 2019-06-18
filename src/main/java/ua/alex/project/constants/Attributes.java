@@ -1,5 +1,8 @@
 package ua.alex.project.constants;
 
+/**
+ * This is the list of all Attributes;
+ */
 public interface Attributes {
     String CONTENT_TYPE = "text/html";
     String CHARACTER_ENCODING = "UTF-8";

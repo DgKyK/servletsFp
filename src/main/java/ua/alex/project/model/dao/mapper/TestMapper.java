@@ -5,6 +5,9 @@ import ua.alex.project.model.entity.Test;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+/**
+ * class that helps to map the Test entity from DB;
+ */
 public class TestMapper implements ObjectMapper<Test> {
     @Override
     public Test extractFromResultSet(ResultSet rs) throws SQLException {

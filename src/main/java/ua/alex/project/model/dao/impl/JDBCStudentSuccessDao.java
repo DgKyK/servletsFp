@@ -17,6 +17,9 @@ import java.util.List;
 import java.util.Optional;
 import java.util.ResourceBundle;
 
+/**
+ * Class that implement StudentSuccessDao Interface with specific methods;
+ */
 public class JDBCStudentSuccessDao implements StudentSuccessDao {
     private Logger logger = LogManager.getLogger(getClass());
 

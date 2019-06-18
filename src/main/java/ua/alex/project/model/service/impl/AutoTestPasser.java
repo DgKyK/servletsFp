@@ -7,6 +7,9 @@ import ua.alex.project.model.enums.Answer;
 import java.util.Map;
 import java.util.TreeMap;
 
+/**
+ * Class that responsible for auto test passing by random answers;
+ */
 public class AutoTestPasser {
 
     public static Map<Integer, Answer> getPassedTest(int questionNumber) {

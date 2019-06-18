@@ -11,7 +11,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.Optional;
-@WebFilter (urlPatterns = {/*"/user/user_base", "/user/user_statistic", "/user/test", */"/user/*"})
+
+/**
+ * Filter for user pages accessing;
+ */
+@WebFilter (urlPatterns = {"/user/*"})
 public class UserPermitFilter extends AbstractFilter {
     @Override
     protected void filter(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain, Optional<User> user) throws ServletException, IOException {

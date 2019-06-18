@@ -14,6 +14,9 @@ import java.util.List;
 import java.util.Optional;
 import java.util.ResourceBundle;
 
+/**
+ * Class that implement TestDao Interface with specific methods;
+ */
 public class JDBCTestDao implements TestDao {
     private Logger logger = LogManager.getLogger(getClass());
     private Connection connection;

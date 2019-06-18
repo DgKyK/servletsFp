@@ -6,6 +6,9 @@ import ua.alex.project.model.enums.Answer;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+/**
+ * class that helps to map the Question entity from DB;
+ */
 public class QuestionMapper implements ObjectMapper<Question> {
     @Override
     public Question extractFromResultSet(ResultSet rs) throws SQLException {

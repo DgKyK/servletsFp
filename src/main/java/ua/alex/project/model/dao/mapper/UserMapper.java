@@ -6,6 +6,9 @@ import ua.alex.project.model.enums.Role;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+/**
+ * class that helps to map the User entity from DB;
+ */
 public class UserMapper implements ObjectMapper<User> {
 
     @Override

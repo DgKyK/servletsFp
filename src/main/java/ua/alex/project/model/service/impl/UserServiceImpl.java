@@ -10,6 +10,9 @@ import ua.alex.project.model.service.UserService;
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * Implementation of UserService interface;
+ */
 public class UserServiceImpl implements UserService {
     private Logger logger = LogManager.getLogger(getClass());
 

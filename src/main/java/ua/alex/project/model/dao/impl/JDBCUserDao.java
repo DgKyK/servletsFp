@@ -13,6 +13,9 @@ import java.util.List;
 import java.util.Optional;
 import java.util.ResourceBundle;
 
+/**
+ * Class that implement UserDao Interface with specific methods;
+ */
 public class JDBCUserDao implements UserDao {
     private Logger logger = LogManager.getLogger(getClass());
     private Connection connection;

@@ -6,6 +6,9 @@ import ua.alex.project.constants.Attributes;
 import javax.sql.DataSource;
 import java.util.ResourceBundle;
 
+/**
+ * Class for connection pool
+ */
 public class ConnectionPoolHolder {
     private static volatile DataSource dataSource;
     public static DataSource getDataSource(){

@@ -12,6 +12,9 @@ import java.util.Optional;
 
 
 
+/**
+ * Listener for destroying session;
+ */
 @WebListener
 public class SessionListener implements HttpSessionListener {
     private HashSet<String> allUsers;
