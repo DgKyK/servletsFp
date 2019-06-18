@@ -9,7 +9,7 @@ public interface Attributes {
     String DB_PASSWORD = "db.password";
     String DB_URL = "db.url";
 
-    int RECORD_PER_PAGE = 10;
+    int RECORDS_PER_PAGE = 10;
 
     String DB_SQL_ALL_USERS = "sql.usersFindAll";
     String DB_SQL_SAVE_USER = "sql.usersSave";
@@ -22,6 +22,8 @@ public interface Attributes {
     String DB_SQL_FIND_ALL_SUCCESS_BY_USER_ID = "sql.studentSuccessFindAllByUserId";
     String DB_SQL_FIND_TEST_BY_NAME = "sql.testsFindTestByName";
     String DB_SQL_UPDATE_USER = "sql.usersUpdateUser";
+    String DB_SQL_FIND_LIMIT_VIEW_BY_USER_ID = "sql.successFindLimitViewByUserId";
+    String DB_SQL_GET_SUCCES_COUNT_BY_USER_ID = "sql.successGetRowsCountByUserId";
 
 
     String REQUEST_LOGIN = "login";
@@ -49,6 +51,10 @@ public interface Attributes {
     String REQUEST_USER_EXIST_ERROR = "userExistError";
     String REQUEST_SESSION_LOCALE = "sessionLocale";
     String REQUEST_DOUBLE_AUTH_ERROR = "doubleAuthError";
+    String REQUEST_CURRENT_PAGE = "currentPage";
+    String REQUEST_NUMBER_OF_PAGES = "noOfPages";
+    String REQUEST_RECORDS_PER_PAGE = "recordsPerPage";
+    String REQUEST_CHECKED_TEST = "checkedTest";
 
     String PAGE_LOGIN = "/login.jsp";
     String PAGE_LOGIN_FIRST = "/login.jsp";
@@ -84,6 +90,4 @@ public interface Attributes {
     String REGEX_PASSWORD = ".{4,15}";
     String REGEX_EMAIL = "\\w{2,}@[a-z]{3,}\\.[a-z]{2,}";
 
-    String DB_SQL_FIND_LIMIT_VIEW_BY_USER_ID = "sql.successFindLimitViewByUserId";
-    String DB_SQL_GET_SUCCES_COUNT_BY_USER_ID = "sql.successGetRowsCountByUserId";
 }

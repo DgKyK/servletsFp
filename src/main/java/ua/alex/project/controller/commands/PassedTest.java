@@ -20,14 +20,13 @@ public class PassedTest implements Command {
         String chosenTest = request.getParameter(Attributes.REQUEST_CHOSEN_TEST);
         User userFromSession = (User) request.getSession().getAttribute(Attributes.REQUEST_USER);
 
-        Test testChosenTest = TEST_SERVICE.findTestByChosenTest(chosenTest);
         List<Question> questionList = TEST_SERVICE.findAllQuestionsByChosenTest(chosenTest);
 
         Map<Integer, Answer> passedTest = AutoTestPasser.getPassedTest(questionList.size());
         Map<String, Boolean> checkedTest = TestChecker.getTestReview(questionList, passedTest);
 
         STUDENT_SUCCESS_SERVICE.saveCurrentResult(checkedTest,chosenTest,userFromSession.getLogin());
-        request.getSession().setAttribute("checkedTest", checkedTest);
+        request.getSession().setAttribute(Attributes.REQUEST_CHECKED_TEST, checkedTest);
 
         return returnPage;
     }

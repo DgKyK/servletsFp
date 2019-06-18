@@ -26,9 +26,9 @@ public class StudentSuccessServiceImpl implements StudentSuccessService {
     private TestService testService;
     private UserService userService;
 
-    public StudentSuccessServiceImpl() {
-        testService = new TestServiceImpl();
-        userService = new UserServiceImpl();
+    public StudentSuccessServiceImpl(TestService testService, UserService userService) {
+        this.testService = testService;
+        this.userService = userService;
     }
 
     @Override

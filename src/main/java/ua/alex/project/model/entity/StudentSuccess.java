@@ -130,4 +130,17 @@ public class StudentSuccess {
             return success;
         }
     }
+
+    @Override
+    public String toString() {
+        return "StudentSuccess{" +
+                "id=" + id +
+                ", userId=" + userId +
+                ", questNumber=" + questNumber +
+                ", writeAnswer=" + writeAnswer +
+                ", wrongAnswer=" + wrongAnswer +
+                ", test=" + test +
+                ", status=" + status +
+                '}';
+    }
 }

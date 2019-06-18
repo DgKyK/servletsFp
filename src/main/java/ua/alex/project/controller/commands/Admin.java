@@ -19,7 +19,6 @@ public class Admin implements Command{
         }
         List<User> allUsers = USER_SERVICE.getAllUsers();
         request.getSession().setAttribute(Attributes.REQUEST_All_USERS, allUsers);
-
         return Attributes.PAGE_ADMIN_HOME;
     }
 
