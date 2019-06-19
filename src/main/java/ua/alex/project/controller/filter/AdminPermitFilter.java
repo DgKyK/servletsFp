@@ -24,6 +24,9 @@ public class AdminPermitFilter extends AbstractFilter {
 
         if (user.isPresent()) {
             if(user.get().getRole().equals(Role.ADMIN)) {
+                response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
+                response.setHeader("Pragma", "no-cache");
+                response.setDateHeader("Expires", 0);
                 filterChain.doFilter(request, response);
             } else if(user.get().getRole().equals(Role.USER)) {
                 logger.warn("user : " + user.get().getLogin() + " try to access admin page!!!");

@@ -42,6 +42,7 @@ public class JDBCQuestionDao implements QuestionDao {
             }
         } catch (SQLException e) {
             logger.error("Exception when find quest by test_id" + e.getMessage());
+            e.printStackTrace();
         }
         return questions;
     }

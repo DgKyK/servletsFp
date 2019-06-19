@@ -14,22 +14,14 @@ import java.util.List;
 @WebListener
 public class ServletContext implements ServletContextListener {
     private HashSet<String> allUsers = new HashSet<>();
-    //private TestServiceImpl testService = new TestServiceImpl();
 
     @Override
     public void contextInitialized(ServletContextEvent servletContextEvent) {
         servletContextEvent.getServletContext().setAttribute(Attributes.REQUEST_All_USERS, allUsers);
-        //List<PassedTest> allTests = testService.findAllTests();
-
-        /*if(!allTests.isEmpty()) {
-            allTests.sort(Comparator.comparingLong(PassedTest::getId));
-            servletContextEvent.getServletContext().setAttribute(Attributes.REQUEST_ALL_TESTS, allTests);
-        }*/
     }
 
     @Override
     public void contextDestroyed(ServletContextEvent sce) {
         allUsers = null;
-        //testService = null;
     }
 }

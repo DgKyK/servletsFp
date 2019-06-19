@@ -25,7 +25,6 @@ public class JDBCDaoFactory extends DaoFactory {
         return new JDBCTestDao(getConnection());
     }
 
-
     @Override
     public StudentSuccessDao createStudentSuccessDao() {
         return new JDBCStudentSuccessDao(getConnection());

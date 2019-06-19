@@ -1,0 +1,67 @@
+[INFO ] 2019-06-15 16:46:36.839 [http-bio-8080-exec-4] CommandsUtil - user have been logged : user
+[INFO ] 2019-06-15 16:46:36.839 [http-bio-8080-exec-4] LogIn - Try to log from login commanD!!!!!!!!!!!!!!!
+[INFO ] 2019-06-15 16:47:26.223 [http-bio-8080-exec-10] CommandsUtil - user have been logged : admin
+[INFO ] 2019-06-15 16:47:26.224 [http-bio-8080-exec-10] LogIn - Try to log from login commanD!!!!!!!!!!!!!!!
+[INFO ] 2019-06-15 16:52:15.958 [http-bio-8080-exec-2] CommandsUtil - user have been logged : admin
+[INFO ] 2019-06-15 16:54:32.515 [http-bio-8080-exec-4] CommandsUtil - user have been logged : user
+[INFO ] 2019-06-15 16:54:53.572 [http-bio-8080-exec-8] CommandsUtil - user have been logged : user
+[INFO ] 2019-06-15 16:55:23.435 [http-bio-8080-exec-10] CommandsUtil - user have been logged : user
+[INFO ] 2019-06-15 17:01:47.687 [http-bio-8080-exec-4] CommandsUtil - user have been logged : user
+[INFO ] 2019-06-15 17:02:00.205 [http-bio-8080-exec-8] CommandsUtil - user have been logged : user
+[INFO ] 2019-06-15 17:02:21.342 [http-bio-8080-exec-10] CommandsUtil - user have been logged : user
+[INFO ] 2019-06-15 17:05:17.426 [http-bio-8080-exec-1] CommandsUtil - user have been logged : user
+[INFO ] 2019-06-15 17:05:46.432 [http-bio-8080-exec-1] CommandsUtil - user have been logged : user
+[INFO ] 2019-06-15 17:08:42.316 [http-bio-8080-exec-6] CommandsUtil - user have been logged : user
+[WARN ] 2019-06-15 17:11:50.616 [http-bio-8080-exec-3] CommandsUtil - Double auth error by user : user
+[WARN ] 2019-06-15 17:12:28.636 [http-bio-8080-exec-3] CommandsUtil - Double auth error by user : user
+[INFO ] 2019-06-15 17:14:03.817 [http-bio-8080-exec-5] CommandsUtil - user have been logged : user
+[INFO ] 2019-06-15 17:23:08.415 [http-bio-8080-exec-4] CommandsUtil - user have been logged : user
+[WARN ] 2019-06-15 17:23:26.702 [http-bio-8080-exec-10] CommandsUtil - Double auth error by user : user
+[INFO ] 2019-06-15 17:25:48.501 [http-bio-8080-exec-5] CommandsUtil - user have been logged : user
+[WARN ] 2019-06-15 17:26:04.832 [http-bio-8080-exec-10] CommandsUtil - Double auth error by user : user
+[WARN ] 2019-06-15 17:26:11.068 [http-bio-8080-exec-10] CommandsUtil - Double auth error by user : user
+[INFO ] 2019-06-15 17:26:28.766 [http-bio-8080-exec-10] CommandsUtil - user have been logged : admin
+[WARN ] 2019-06-15 17:26:38.272 [http-bio-8080-exec-1] CommandsUtil - Double auth error by user : admin
+[INFO ] 2019-06-15 17:37:41.786 [http-bio-8080-exec-5] CommandsUtil - user have been logged : user
+[INFO ] 2019-06-15 17:40:36.500 [http-bio-8080-exec-3] CommandsUtil - user have been logged : user
+[WARN ] 2019-06-15 18:50:00.273 [main] UserServiceImpl - User with login : null not found
+[WARN ] 2019-06-15 18:51:39.489 [main] UserServiceImpl - User with login : null not found
+[WARN ] 2019-06-15 18:55:13.136 [main] UserServiceImpl - User with login : null not found
+[WARN ] 2019-06-15 18:57:19.669 [main] UserServiceImpl - User with login : null not found
+[WARN ] 2019-06-15 19:03:59.092 [main] UserServiceImpl - User with login : null not found
+[ERROR] 2019-06-15 21:04:22.587 [main] TestServiceImpl - Test with name : alexnot found
+[ERROR] 2019-06-15 21:06:16.173 [main] TestServiceImpl - Test with name : alexnot found
+[ERROR] 2019-06-15 21:30:51.336 [main] TestServiceImpl - Test with name : alexnot found
+[ERROR] 2019-06-15 21:54:50.673 [main] TestServiceImpl - Test with name : alexnot found
+[ERROR] 2019-06-15 22:35:42.140 [main] TestServiceImpl - Test with name : alexnot found
+[ERROR] 2019-06-15 22:37:38.489 [main] TestServiceImpl - Test with name : alexnot found
+[ERROR] 2019-06-15 22:38:08.460 [main] TestServiceImpl - Test with name : alexnot found
+[WARN ] 2019-06-18 23:35:11.334 [http-bio-8080-exec-5] UserServiceImpl - User with login : tester not found
+[WARN ] 2019-06-18 23:36:16.900 [http-bio-8080-exec-8] UserServiceImpl - User with login : f5d1278e8109edd94e1e4197e04873b9 not found
+[WARN ] 2019-06-18 23:36:23.373 [http-bio-8080-exec-9] UserServiceImpl - User with login : f5d1278e8109edd94e1e4197e04873b9 not found
+[WARN ] 2019-06-18 23:36:57.444 [http-bio-8080-exec-10] UserServiceImpl - User with login : test not found
+[WARN ] 2019-06-18 23:37:11.865 [http-bio-8080-exec-10] UserServiceImpl - User with login : 098f6bcd4621d373cade4e832627b4f6 not found
+[WARN ] 2019-06-18 23:40:18.074 [http-bio-8080-exec-3] UserServiceImpl - User with login : test1 not found
+[INFO ] 2019-06-18 23:40:22.038 [http-bio-8080-exec-5] CommandsUtil - user have been logged : test1
+[WARN ] 2019-06-19 00:09:04.660 [http-bio-8080-exec-4] UserServiceImpl - User with login : forAdmin not found
+[WARN ] 2019-06-19 00:10:31.381 [http-bio-8080-exec-8] UserServiceImpl - User with login : forUser not found
+[INFO ] 2019-06-19 00:13:20.558 [http-bio-8080-exec-1] CommandsUtil - user have been logged : user
+[INFO ] 2019-06-19 00:13:29.773 [http-bio-8080-exec-1] CommandsUtil - user have been logged : admin
+[INFO ] 2019-06-19 17:18:22.252 [http-bio-8080-exec-4] CommandsUtil - user have been logged : user
+[INFO ] 2019-06-19 17:19:57.183 [http-bio-8080-exec-9] CommandsUtil - user have been logged : user
+[INFO ] 2019-06-19 18:15:00.202 [http-bio-8080-exec-3] CommandsUtil - user have been logged : user
+[INFO ] 2019-06-19 18:26:05.976 [http-bio-8080-exec-3] CommandsUtil - user have been logged : admin
+[INFO ] 2019-06-19 18:27:01.943 [http-bio-8080-exec-8] CommandsUtil - user have been logged : admin
+[INFO ] 2019-06-19 18:31:35.393 [http-bio-8080-exec-4] CommandsUtil - user have been logged : admin
+[INFO ] 2019-06-19 18:32:15.281 [http-bio-8080-exec-9] CommandsUtil - user have been logged : admin
+[INFO ] 2019-06-19 18:32:57.469 [http-bio-8080-exec-10] CommandsUtil - user have been logged : user
+[INFO ] 2019-06-19 18:35:41.205 [http-bio-8080-exec-2] CommandsUtil - user have been logged : user
+[INFO ] 2019-06-19 18:36:19.364 [http-bio-8080-exec-3] CommandsUtil - user have been logged : user
+[WARN ] 2019-06-19 18:38:06.828 [http-bio-8080-exec-8] AdminPermitFilter - user : user try to access admin page!!!
+[INFO ] 2019-06-19 18:43:30.210 [http-bio-8080-exec-3] CommandsUtil - user have been logged : user
+[INFO ] 2019-06-19 18:46:01.079 [http-bio-8080-exec-4] CommandsUtil - user have been logged : admin
+[INFO ] 2019-06-19 18:49:36.531 [http-bio-8080-exec-1] CommandsUtil - user have been logged : admin
+[INFO ] 2019-06-19 18:52:30.874 [http-bio-8080-exec-3] CommandsUtil - user have been logged : admin
+[INFO ] 2019-06-19 18:52:43.757 [http-bio-8080-exec-7] CommandsUtil - user have been logged : admin
+[INFO ] 2019-06-19 18:53:51.877 [http-bio-8080-exec-3] CommandsUtil - user have been logged : admin
+[INFO ] 2019-06-19 18:57:34.349 [http-bio-8080-exec-4] CommandsUtil - user have been logged : user

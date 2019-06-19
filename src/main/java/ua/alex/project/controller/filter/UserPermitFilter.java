@@ -21,6 +21,9 @@ public class UserPermitFilter extends AbstractFilter {
     protected void filter(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain, Optional<User> user) throws ServletException, IOException {
         if (user.isPresent()) {
             if(user.get().getRole().equals(Role.USER)) {
+                response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
+                response.setHeader("Pragma", "no-cache");
+                response.setDateHeader("Expires", 0);
                 filterChain.doFilter(request, response);
             } else if(user.get().getRole().equals(Role.ADMIN)) {
                 logger.warn("Admin : " + user.get().getLogin() + " try to access user page");

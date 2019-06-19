@@ -36,7 +36,6 @@ public class EncodingFilter extends AbstractFilter{
         request.setCharacterEncoding(Attributes.CHARACTER_ENCODING);
 
 
-
         filterChain.doFilter(request, response);
     }
 

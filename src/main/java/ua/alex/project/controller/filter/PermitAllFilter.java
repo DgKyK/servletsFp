@@ -15,17 +15,18 @@ import java.util.Optional;
 /**
  * Filter that allows full access for concrete url;
  */
-@WebFilter(urlPatterns = {"/login", "/registration", "/index"})
+@WebFilter(urlPatterns = {"/login", "/registration", "/index", "/loginFirst"})
 public class PermitAllFilter extends AbstractFilter {
     @Override
     protected void filter(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain, Optional<User> user) throws ServletException, IOException {
 
         if(!user.isPresent()) {
             filterChain.doFilter(request,response);
-        } else if(user.get().getRole().equals(Role.ADMIN)) {
-            response.sendRedirect(Attributes.PAGE_ADMIN_HOME_REDIRECT);
-        } else if(user.get().getRole().equals(Role.USER)) {
+        } else if (user.get().getRole().equals(Role.ADMIN)) {
+                response.sendRedirect(Attributes.PAGE_ADMIN_HOME_REDIRECT);
+        } else {
             response.sendRedirect(Attributes.PAGE_USER_HOME_REDIRECT);
         }
+
     }
 }
